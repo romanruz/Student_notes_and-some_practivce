@@ -1,9 +1,18 @@
+@font-face{
+	font-family: moserrat;
+	src: url(font/Montserrat-Regular.ttf);
+}
 body{
 	background-color: #a39f9b;
 }
-#header {
-	background: url(flag.jpg)no-repeat center fixed;
-	height: 400px;
+#header {background:url(5.png) top center repeat-x; 
+    height: 400px;
 	width:100%;
-    background-size: 100%;
-    background-position:center; 
+}
+#conteiner{	
+	font-family: moserrat;
+	color:red;
+	margin-left: 10px; 
+	margin-top:0px;
+
+}
