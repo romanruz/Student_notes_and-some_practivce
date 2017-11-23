@@ -2,7 +2,7 @@ body{
 	background-color: #a39f9b;
 }
 #header {
-	background: url(flag.jpg)repeat-x center bottom;
+	background: url(flag.jpg)no-repeat center fixed;
 	height: 400px;
 	width:100%;
-}
+    background-size: 100%;
