@@ -1,0 +1,8 @@
+body{
+	background-color: #a39f9b;
+}
+#header {
+	background: url(flag.jpg)repeat-x center bottom;
+	height: 400px;
+	width:100%;
+}
