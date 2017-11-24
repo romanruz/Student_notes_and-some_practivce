@@ -5,24 +5,27 @@
 body{
 	background-color: #a39f9b;
 	margin:0px;
-	border:1px solid green;
+	
 
 }
 #header {
 	background:url(5.png)  repeat-x; 
-    height: 400px;
-	width:100%;
-	border:1px solid blue;
+	background-position:bottom;
+	
 
 }
 #headertxt{	
 	font-family: moserrat;
+	font-weight: bold;
 	color:red;
 	margin-top: 0px;
 	padding:0px;
 	line-height: 2;
-	border:1px solid red;
-
+}	
+#content  {
+	margin-top: 1000px
+	padding 10000px
+}
 
 	
 
