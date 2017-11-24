@@ -4,19 +4,19 @@
 	src: url(font/Montserrat-Regular.ttf);
 }
 body
-{
+{   margin-left: 0px;
+	margin-top: 0px;
 	background-color: white;
-	margin:0px;
 	
-
 }
 #header 
-{
+{   
 	background:url(5.png)  repeat-x; 
 	background-position:bottom;
+
 	}
 #headertxt
-{	
+{	margin-top: 0px;
 	font-family: moserrat;
 	font-weight: bold;
 	color:red;
