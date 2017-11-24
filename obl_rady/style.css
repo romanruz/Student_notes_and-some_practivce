@@ -1,31 +1,30 @@
-@font-face{
+@font-face
+{
 	font-family: moserrat;
 	src: url(font/Montserrat-Regular.ttf);
 }
-body{
+body
+{
 	background-color: #a39f9b;
 	margin:0px;
 	
 
 }
-#header {
+#header 
+{
 	background:url(5.png)  repeat-x; 
 	background-position:bottom;
-	
-
-}
-#headertxt{	
+	}
+#headertxt
+{	
 	font-family: moserrat;
 	font-weight: bold;
 	color:red;
-	margin-top: 0px;
-	padding:0px;
 	line-height: 2;
+	padding-left: 10px;
 }	
-#content  {
-	margin-top: 1000px
-	padding 10000px
-}
+
+	
 
 	
 
