@@ -4,7 +4,8 @@
 	src: url(font/Montserrat-Regular.ttf);
 }
 body
-{   margin-left: 0px;
+{   
+	margin-left: 0px;
 	margin-top: 0px;
 	background-color: white;
 }
