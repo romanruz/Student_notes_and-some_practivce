@@ -133,3 +133,53 @@ body {
 	margin-top: 40px;
 	padding-top: 60px;
 }
+@media screen and (min-width: 1024px) {
+.flexi1 {
+	flex:1 0 33.3%;
+	background: #f08080;
+	width: 100;
+	text-align: center;
+	font: bold 26px Arial;
+	padding-top: 65px;
+	padding-bottom: 65px;
+	}
+.flexi2 {
+	flex:1 0 33.3%;
+	background: #8a2be2;
+	width: 100;
+	text-align: center;
+	font: bold 26px Arial;
+	padding-top: 65px;
+	padding-bottom: 65px;
+	}
+.flexi3 {
+	flex:1 0 33.3%;
+	background: #a52a2a;
+	width: 100;
+	text-align: center;
+	font: bold 26px Arial;
+	padding-top: 65px;
+	padding-bottom: 65px;
+	}
+
+
+.flexi4 {
+	flex:1 0 50%;
+	order: 1;
+	background: #20b2aa;
+	width: 100;
+	text-align: center;
+	font: bold 26px Arial;
+	padding-top: 65px;
+	padding-bottom: 65px;
+	}
+.flexi5 {
+	flex:1 0 50%;
+	background: #4169e1;
+	width: 100;
+	text-align: center;
+	font: bold 26px Arial;
+	padding-top: 65px;
+	padding-bottom: 65px;
+	}
+}
