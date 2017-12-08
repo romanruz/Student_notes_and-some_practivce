@@ -11,11 +11,14 @@ body {
 }
 .flexc {
 	display: flex;
-	flex-direction:column;
+	flex-direction:row;
+	flex-wrap: wrap;
+	align-content: stretch; 
 	border:35px solid blue;
 	margin-top: 35px;
 }
 .flexi1 {
+	flex:1 0 50%;
 	background: #f08080;
 	width: 100;
 	text-align: center;
@@ -24,6 +27,7 @@ body {
 	padding-bottom: 65px;
 }
 .flexi2 {
+	flex:1 0 50%;
 	background: #8a2be2;
 	width: 100;
 	text-align: center;
@@ -32,7 +36,8 @@ body {
 	padding-bottom: 65px;
 }
 .flexi3 {
-	background: #4169e1;
+	flex:1 0 50%;
+	background: #a52a2a;
 	width: 100;
 	text-align: center;
 	font: bold 26px Arial;
@@ -42,6 +47,8 @@ body {
 
 
 .flexi4 {
+	flex:1 0 50%;
+	order: 1;
 	background: #20b2aa;
 	width: 100;
 	text-align: center;
@@ -50,6 +57,7 @@ body {
 	padding-bottom: 65px;
 }
 .flexi5 {
+	flex:1 0 50%;
 	background: #4169e1;
 	width: 100;
 	text-align: center;
