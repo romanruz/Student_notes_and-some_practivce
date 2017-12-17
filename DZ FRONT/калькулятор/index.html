@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<script type="text/javascript">
+		// alert ("Hellow world");
+		
+		var a = prompt("КАЛЬКУЛЯТОР", "Введи первое число сюда");
+		var b = prompt("КАЛЬКУЛЯТОР", "Введи второе число сюда");
+		var c = prompt ("КАЛЬКУЛЯТОР", "Выберай символ -, + ,* ,/" )
+		a_int = parseInt(a);
+		b_int = parseInt(b);
+		function calc (a,b,c){
+			switch (c){
+				case "+":
+					return a+b;
+				case "-":
+					return a-b;
+				case "/":
+					if (b !=0) {
+					return a/b;
+				}
+				else{
+					return "на ноль ноль нини"
+				}
+				case "*":
+				    return a*b;
+				}
+			}
+		res = calc (a_int,b_int,c)
+		document.write (res);
+
+</script>
+<head>
+	<title></title>
+</head>
+<body>
+
+</body>
+</html>
