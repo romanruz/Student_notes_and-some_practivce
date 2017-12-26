@@ -3,12 +3,12 @@
 <?php
 $day = date("l");
 $arr = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
-foreach ($arr as $Days){
-    if ($Days == $day){
-        echo "<i>$Days</i>". ',';
+foreach ($arr as $days){
+    if ($days == $day){
+        echo "<i>$days</i>". ',';
     }
     else {
-        echo $Days . ',';
+        echo $days . ',';
         }
 }
 echo $day;

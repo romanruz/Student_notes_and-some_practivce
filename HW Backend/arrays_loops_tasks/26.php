@@ -5,15 +5,26 @@
 <?php
 $arr = [];
 $res = 0;
+$res2 = '';
 for ($i = 1;$i<=100;$i++){
     $arr[] = rand(1,100);
 }
+var_dump($arr);
 foreach ($arr as $key=>$value){
     if ($key%2 == 0 && $value>0){
         $res += $value;
     }
+    else{
+        $res2.= "$value,";
+
+    }
 }
-var_dump($arr);
-echo '<br>';
+?>
+<hr>
+<?php
 echo $res;
+?>
+<hr>
+<?php
+echo $res2;
 ?>
