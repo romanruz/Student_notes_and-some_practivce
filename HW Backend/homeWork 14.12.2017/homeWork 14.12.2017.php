@@ -19,7 +19,7 @@
 
     <p>
         File:
-        <input type="file" name="picAndTxt" multiple><br>
+        <input type="file" name="picAndTxt"><br>
         <input type="hidden" name="MAX_FILE_SIZE" value="2097152" />
     </p>
     <p>
