@@ -333,7 +333,7 @@ a, a:hover {
 
 #messege input[type="text"],
 #messege textarea {
-	width: 100%
+	width: 100%;
 	background: #fff;
 	border-radius: 4px;
 }
