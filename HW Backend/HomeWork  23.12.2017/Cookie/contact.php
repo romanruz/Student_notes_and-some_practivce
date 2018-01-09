@@ -2,8 +2,6 @@
 $visitedpage = $_COOKIE['visitpage'];
 setcookie('visitpage','contact'.",". $visitedpage)
 ?>
-
-
 <!doctype html>
 <html lang="en">
 <head>
