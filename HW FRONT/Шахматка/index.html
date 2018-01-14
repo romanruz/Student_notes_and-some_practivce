@@ -19,9 +19,9 @@
     for (i=1; i<9; i++) {
       document.writeln("<tr>");
       for (j=1; j<9; j++)
-      if ((i%2==0 && j%2==0)|| (i%2!=0 && j%2!=0)) {document.write("<td class='black'>" + "<\/td>");} 
+      if ((i%2==0 && j%2==0)|| (i%2!=0 && j%2!=0)) {document.write("<td>" + "<\/td>");} 
       else {
-        document.write("<td>" +  "<\/td>");
+        document.write("<td class='black'>" +  "<\/td>");
       }
       document.writeln("<\/tr>");
     }
