@@ -17,13 +17,15 @@
 	 <script type="text/javascript">
     document.write ('<table width="800px height="800" border="1">');
     for (i=1; i<9; i++) {
-      document.writeln("<tr>");
+      document.write("<tr>");
       for (j=1; j<9; j++)
-      if ((i%2==0 && j%2==0)|| (i%2!=0 && j%2!=0)) {document.write("<td>" + "<\/td>");} 
+      if ((i%2==0 && j%2==0)|| (i%2!=0 && j%2!=0)) {
+      	document.write("<td>" + "<\/td>");
+      } 
       else {
-        document.write("<td class='black'>" +  "<\/td>");
+        document.write ("<td class='black'>" +  "<\/td>");
       }
-      document.writeln("<\/tr>");
+      document.write ("<\/tr>");
     }
     document.write ("<\/table> ");
   </script>
