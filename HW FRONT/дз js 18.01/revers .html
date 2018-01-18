@@ -32,15 +32,28 @@
 
 	function myReverseWithVar(arr)
 	{
-		var buffer = '';
-		for(var i=0,j=arr.length-1; i<j; i++,j--)
-		{
-    	buffer = arr[j];
+	var buffer = '';
+	for(var i=0,j=arr.length-1; i<j; i++,j--){
+		buffer = arr[j];
     	arr[j] = arr[i];
     	arr[i] = buffer;
 		}
-		return(arr);
+	return(arr);
 	}
+
+	function moreAndMoreverses(arr) 
+	{
+	var count = 0;
+  	var i = arr.length-1;
+  	var result = [];
+	while (i>=0){
+		result[i] = arr[count]
+		i--;
+		count++;
+		}
+	return result;
+	}
+
 
 	function ReversFirst (arr)
 	{
@@ -63,21 +76,21 @@
 	{
      var count = (arr.length%2) ? (arr.length - 1)/2 : arr.length/2;
      var i = 0;
-     	while(count--){
-        	arr.splice(i,0,arr[arr.length-i-1]);// последнее значение на место первого
-        	arr.splice(arr.length-i,0,arr[i+1]);//первое в конец массива
-        	arr.splice(arr.length-i-2,1);//удалили предпоследнее
-			arr.splice(i+1,1);//удалил второе (первое уже занято нужным нам) 
-        	i++;
+     while(count--){
+        arr.splice(i,0,arr[arr.length-i-1]);// последнее значение на место первого
+        arr.splice(arr.length-i,0,arr[i+1]);//первое в конец массива
+        arr.splice(arr.length-i-2,1);//удалили предпоследнее
+		arr.splice(i+1,1);//удалил второе (первое уже занято нужным нам) 
+        i++;
     	}
 	}
 
 
 	function randomInteger(min, max) 
 	{
-    	var rand = min - 0.5 + Math.random() * (max - min + 1);
-    	rand = Math.round(rand);
-    	return rand;
+    var rand = min - 0.5 + Math.random() * (max - min + 1);
+    rand = Math.round(rand);
+    return rand;
   	}
 	</script>
 </head>
