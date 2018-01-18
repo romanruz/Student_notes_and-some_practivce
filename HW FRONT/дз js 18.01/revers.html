@@ -1,0 +1,44 @@
+ <p>Написать свою реализацию функции revers для масива. Работать должно так: вводите количество чисел в массиве. Потом при помощи js генерите масив рандомных значений от 1 до 1000(найдите как это сделать) и потом передаете этот массив в свою фукнцию, которая должна ввернуть вам уже новый зеркальный массив</p>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>HW FRONT</title>
+
+	<script>
+		var num = +prompt('введите количество чисел в массиве',1000);
+		var arr = [];
+		for (var i = 0; i <= num-1; i++) {
+			arr[i] = randomInteger(1,1000);
+		}
+		document.write(arr+'<br>');
+		myReverse(arr);
+		document.write(arr);
+
+//functions
+	function myReverse(arr)
+	{
+		var buffer = '';
+		for(var i=0,j=arr.length-1; i<j; i++,j--)
+		{
+    	buffer = arr[j];
+    	arr[j] = arr[i];
+    	arr[i] = buffer;
+		}
+		return(arr);
+	}
+
+	function randomInteger(min, max) 
+	{
+    var rand = min - 0.5 + Math.random() * (max - min + 1);
+    console.log(rand);
+    rand = Math.round(rand);
+    return rand;
+  	}
+	</script>
+</head>
+<body>
+	
+</body>
+</html>
