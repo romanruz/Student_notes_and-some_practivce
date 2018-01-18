@@ -13,7 +13,6 @@
 			arr[i] = randomInteger(1,1000);
 		}
 		document.write(arr+'<br>');
-		console.log(arr.length);
 		myReverse(arr);
 		document.write(arr);
 
@@ -22,20 +21,20 @@
 	{
 		
 		for(var i=0,j = arr.length-1; i<j; i++,j--)
-		{
-    	arr.buffer = arr[j];
-    	arr[j] = arr[i];
-    	arr[i] = arr.buffer;
-    	delete arr.buffer;
-		}
+			{
+    		arr.buffer = arr[j];
+    		arr[j] = arr[i];
+    		arr[i] = arr.buffer;
+    		delete arr.buffer;
+			}
 		return(arr);
 	}
 
 	function randomInteger(min, max) 
 	{
-    var rand = min - 0.5 + Math.random() * (max - min + 1);
-    rand = Math.round(rand);
-    return rand;
+    	var rand = min - 0.5 + Math.random() * (max - min + 1);
+    	rand = Math.round(rand);
+    	return rand;
   	}
 	</script>
 </head>
