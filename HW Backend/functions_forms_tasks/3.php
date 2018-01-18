@@ -11,6 +11,7 @@ if (!$_POST){
     die("введите значение");
 }
 $lenght = $_POST["lenght"];
+$result =array();
 foreach ($stringarr as $word){
     if (mb_strlen($word)<$lenght){
         $result[] = $word;
