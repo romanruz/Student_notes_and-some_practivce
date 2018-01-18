@@ -30,6 +30,33 @@
 		return(arr);
 	}
 
+	function myReverseWithVar(arr)
+	{
+		var buffer = '';
+		for(var i=0,j=arr.length-1; i<j; i++,j--)
+		{
+    	buffer = arr[j];
+    	arr[j] = arr[i];
+    	arr[i] = buffer;
+		}
+		return(arr);
+	}
+
+	function ReversFirst (arr)
+	{
+	arr.buffer = {};
+	for (var i = 0;i<arr.length; i++){
+		arr.buffer[i] = arr[i] 
+	}
+	var g = 0;
+	for (var i = arr.length-1; i >= 0; i--) {
+	arr[i] = arr.buffer[g];
+	g++;
+	}
+	delete arr.buffer;	
+	return (arr);
+	}
+
 	//Романа формула, разобрался что и как 
 
 	function reverce_arr(arr)
