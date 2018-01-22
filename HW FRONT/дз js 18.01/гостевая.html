@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>
+		var anw = '';
+		var list = [];
+		var result = [];
+		
+		result = ask();
+		say(result);
+
+		function ask() 
+		{
+			while(anw!=null){
+			var person = {
+			name:'',
+			sname:'',
+			age:''
+			}
+			anw = prompt('YEs or No to continue')
+			if (anw!=null){
+			person.name = prompt('input name');
+			person.sname = prompt ('imput sname');
+			person.age = prompt ('input age');
+			list.push(person);
+			
+				}
+			}
+			return (list);			
+		}
+
+		function say(array)
+		{
+		for (var i = 0; i <= array.length-1; i++) {
+			for( var key in array[i]){
+			document.write(key+':'+ array[i][key] +'<br>' );
+				}
+		document.write('<hr/>');
+			}
+
+		}
+
+</script>
+</head>
+<body>
+	
+</body>
+</html>
