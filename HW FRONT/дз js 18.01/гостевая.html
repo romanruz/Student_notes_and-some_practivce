@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+	<style>
+		table {
+			 border: 1px solid #000;
+			 border-collapse: collapse;
+			 }
+		td,th    {
+			border: 1px solid #000;
+		}
+	</style>
 	<meta charset="UTF-8">
 	<title>Document</title>
 	<script>
@@ -19,7 +28,7 @@
 			sname:'',
 			age:''
 			}
-			anw = prompt('YEs or No to continue')
+			anw = prompt('Add new press yes.To see list press cancel')
 			if (anw!=null){
 			person.name = prompt('input name');
 			person.sname = prompt ('imput sname');
@@ -33,18 +42,22 @@
 
 		function say(array)
 		{
+		document.write ('<table>')
+		document.write ('<tr><th>NAME</th><th>SNAME</th><th>AGE</th></tr>');
 		for (var i = 0; i <= array.length-1; i++) {
+			document.write ('<tr>');
 			for( var key in array[i]){
-			document.write(key+':'+ array[i][key] +'<br>' );
+			document.write('<td>');
+				document.write(key+':'+ array[i][key]+' ');
+				document.write ('</td>');
 				}
-		document.write('<hr/>');
+				document.write('</tr>');
 			}
-
+			document.write ('</table>');
 		}
 
 </script>
 </head>
 <body>
-	
 </body>
 </html>
