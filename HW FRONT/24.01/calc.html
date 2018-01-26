@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<script type="text/javascript">
+		
+		
+		var a = prompt ("КАЛЬКУЛЯТОР", "Введи первое число сюда");
+		var b = prompt ("КАЛЬКУЛЯТОР", "Введи второе число сюда");
+		var c = prompt ("КАЛЬКУЛЯТОР", "Выберай символ -, + ,* ,/" );
+		//простая проверочка
+		a_int = parseInt(a);
+		b_int = parseInt(b);
+
+
+		
+		var div = function div (a,b)
+		{
+			return a/b;
+		}
+
+		var mult = function mult (a,b)
+		{
+			return a*b;
+
+		}
+		var sub = function sub(a,b)
+		{
+			return a+b;
+		}
+
+		var sum = function sum (a,b)
+		{
+			return a+b;
+		}
+
+		var operation = (c =='-')?sub:(c =='+')?sum:(c == '*')?mult:(c == '/')?div:'error';
+
+		document.write(calc (a_int,b_int,operation));
+
+		function calc (a,b,callback)
+		{
+			return callback(a,b);
+
+		}
+		
+
+</script>
+<head>
+	<title></title>
+</head>
+<body>
+</body>
+</html>
