@@ -1,4 +1,5 @@
 <?php
+global $con;
 $con = new mysqli("localhost","root","","authorization");
 
 if ($con->connect_errno)

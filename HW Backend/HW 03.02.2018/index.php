@@ -5,11 +5,6 @@ require_once 'class.php';
 $data = $_POST;
 $login = new User($data);
 $login->valid();
-
-$sql = 'SELECT * FROM  `login` WHERE `login` = $login->name';
-$a = $con->query($sql);
-var_dump($a);
-
 ?>
 <!doctype html>
 <head>

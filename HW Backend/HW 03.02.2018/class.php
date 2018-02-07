@@ -1,4 +1,6 @@
+
 <?php
+require_once 'db.php';
 class User
 {
     public $name;
@@ -15,6 +17,11 @@ class User
     }
     function valid ()
     {
+
+        $a = $con->query("SELECT * FROM  `login` WHERE login = '$this->name'");
+        if (!empty($a)){
+            $this->errors[] = 'Name already exist';
+        }
         if (trim($this->name)==''){
             $this->errors[]='input login';
         }
