@@ -4,7 +4,8 @@ require_once 'class.php';
 
 $data = $_POST;
 $login = new User($data);
-$login->valid();
+$login->valid($con);
+
 ?>
 <!doctype html>
 <head>

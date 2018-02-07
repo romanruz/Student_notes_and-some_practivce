@@ -15,13 +15,18 @@ class User
         $this->password2 = $data['password2'];
         $this->email = $data['email'];
     }
-    function valid ()
+    function valid ($con)
     {
 
         $a = $con->query("SELECT * FROM  `login` WHERE login = '$this->name'");
-        if (!empty($a)){
-            $this->errors[] = 'Name already exist';
+        foreach ($a as $item){
+            var_dump($item);
+            if (!empty($item)){
+                $this->errors[] = 'Name already exist';
+            }
+
         }
+
         if (trim($this->name)==''){
             $this->errors[]='input login';
         }
