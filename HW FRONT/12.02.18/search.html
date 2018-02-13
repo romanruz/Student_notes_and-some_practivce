@@ -28,7 +28,7 @@
 			var search;
 			while((search = pattern.exec(text))!=null){
 			var re = new RegExp (text.substr(search.index,sLength),'gi')
-			var result = text.replace (re,"<span style = 'color:red'>"+search[0] +"</span>");
+			var result = text.replace (re,"<span style = 'background-color:yellow'>"+search[0] +"</span>");
 			textp.innerHTML = result;
 			
 			}
