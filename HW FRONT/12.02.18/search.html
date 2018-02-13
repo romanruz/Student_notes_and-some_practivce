@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<label for="input">Поиск по странице</label>
+	<input type="text" id="input" onkeyup="search()">
+	<p id="p" >
+		Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto iste provident sunt necessitatibus magni reprehenderit eius ut veniam impedit laboriosam, accusantium exercitationem error atque, totam quis facilis molestias temporibus maxime!
+	</p>>
+	<script type="text/javascript">
+		
+		var def = document.getElementById ('p').innerText;
+		var textp = document.getElementById ('p');
+		function search() {
+			if (document.getElementById('input').value == ''){
+				textp.innerText = def;
+				return ;
+			}
+			var pattern = new RegExp (document.getElementById('input').value,'gi')
+			console.log(pattern);
+			var sLength = document.getElementById('input').value.length;
+			var text = document.getElementById ('p').innerText;
+			var search;
+			while((search = pattern.exec(text))!=null){
+			var re = new RegExp (text.substr(search.index,sLength),'gi')
+			console.log(re);
+			var result = text.replace (re,"<span style = 'color:red'>"+search[0] +"</span>");
+			textp.innerHTML = result;
+			
+			}
+			
+		}
+
+		</script>>
+</body>
+</html>
