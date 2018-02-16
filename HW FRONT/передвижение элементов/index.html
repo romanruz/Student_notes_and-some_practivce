@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<div id="h1"><h1>Нет времеми обьяснять, помоги белке словить орешек</h1></div>
+	
+		<div id="wrapper">
+			<div id="inner">
+			</div>
+		</div>
+	
+	<script>
+		var inner = document.getElementById ('inner');
+		var wrapper = document.getElementById ('wrapper');
+		inner.addEventListener('mousedown',move,false);
+		wrapper.addEventListener('mouseup',drop,false);
+		
+		function move(e) {
+			startX = e.clientX-inner.offsetLeft;
+			startY = e.clientY-inner.offsetTop;
+			wrapper.addEventListener('mousemove',go,false);
+			}
+
+		function go (e1){
+			console.log(e1.clientX-startX,e1.clientY-startY);
+			var posX = e1.clientX-startX;
+			var posY = e1.clientY-startY;
+			inner.style.left = (posX) < 0 ? '0px': (posX) < 404 ? (posX)+'px'	: '404px';
+			inner.style.top = (posY) < 0 ? '0px': (posY) < 421 ? (posY)+'px'	: '421px';
+			if(posX > 116 && posX < 120 && posY >283 && posY < 287 ){
+				var h1 = document.getElementById('h1');
+				wrapper.style.backgroundImage = "url('img/thnx.jpeg')";
+				inner.remove();
+				h1.firstChild.innerText = 'Спасибо человек.Ты очень ловкий и умный'
+			}
+		}
+ 		function drop (){
+ 			wrapper.removeEventListener('mousemove',go,false);
+ 		}
+
+	</script>
+</body>
+</html>
