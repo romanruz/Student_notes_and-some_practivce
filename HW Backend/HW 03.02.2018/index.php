@@ -1,10 +1,14 @@
 <?php
 require_once 'db.php';
 require_once 'class.php';
-
+var_dump(Db::getDb());
 $data = $_POST;
 $login = new User($data);
 $login->valid($con);
+if ($login->errors == false){
+    $login->regi($con);
+}
+
 
 ?>
 <!doctype html>
