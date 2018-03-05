@@ -6,6 +6,8 @@
 	<title>Document</title>
 </head>
 <body>
+	<button id="s">ddd</button>
+
 	<div id="h1"><h1>Нет времеми обьяснять, помоги белке словить орешек</h1></div>
 	
 		<div id="wrapper">
@@ -14,8 +16,10 @@
 		</div>
 	
 	<script>
+		var s = document.getElementById('s');
+		console.log (s);
 		var inner = document.getElementById ('inner');
-		var wrapper = document.getElementById ('wrapper');
+	var wrapper = document.getElementById ('wrapper');
 		inner.addEventListener('mousedown',move,false);
 		wrapper.addEventListener('mouseup',drop,false);
 		

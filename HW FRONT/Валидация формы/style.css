@@ -1,0 +1,46 @@
+#regbutton {
+	text-decoration:none; 
+	text-align:center; 
+	padding:11px 21px; 
+	border:solid 2px #004F72; 
+	-webkit-border-radius:8px;
+	-moz-border-radius:8px; 
+	border-radius: 8px; 
+	font:31px "MS Serif", "New York", serif; 
+	font-weight:bold; 
+	color:#0c0429; 
+	background-color:#3BA4C7; 
+	background-image: -moz-linear-gradient(top, #3BA4C7 0%, #1982A5 100%); 
+	background-image: -webkit-linear-gradient(top, #3BA4C7 0%, #1982A5 100%); 
+	background-image: -o-linear-gradient(top, #3BA4C7 0%, #1982A5 100%); 
+	background-image: -ms-linear-gradient(top, #3BA4C7 0% ,#1982A5 100%); 
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1982A5', endColorstr='#1982A5',GradientType=0 ); 
+	background-image: linear-gradient(top, #3BA4C7 0% ,#1982A5 100%);   
+	-webkit-box-shadow:0px 0px 2px #bababa, inset 0px 0px 1px #ffffff; 
+	-moz-box-shadow: 0px 0px 2px #bababa,  inset 0px 0px 1px #ffffff;  
+	box-shadow:0px 0px 2px #bababa, inset 0px 0px 1px #ffffff;  
+	text-shadow: -1px 0px 16px #bababa; 
+	filter: dropshadow(color=#bababa, offx=-1, offy=0); 
+}
+#wrapper {
+	margin-top: 20px;
+
+}
+#form {
+	padding: 10px;
+	
+	background-color: grey;
+	position: absolute;
+	width: 450px;
+	height: 180px;
+  	overflow: auto;
+  	margin: auto;
+  	position: absolute;
+  	top: 0; left: 0; bottom: 0; right: 0;
+}
+input {
+
+	width: 400px;
+	border: none;
+	border-bottom-style: solid;
+}
