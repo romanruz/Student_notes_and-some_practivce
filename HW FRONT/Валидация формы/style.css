@@ -90,13 +90,13 @@
 	z-index: 999;
 	input {outline:none;}
 	padding: 10px;
-	width: 450px;
 	height: 370px;
   	overflow: auto;
   	margin: auto;
   	position: absolute;
-  	top: 0; left: 0; bottom: 0; right: 0;
-}
+  	top: 10%; 
+  	left: 30%; 
+ }
 #form-header{
 	text-align: left;
 	color:#3BA4C7;
@@ -105,6 +105,7 @@
 #name {
 	background: url('img/user.png')no-repeat scroll 1px 1px;
 }
+
 #age{
 	background: url('img/age.png')no-repeat scroll 1px 1px;
 }
@@ -113,6 +114,12 @@
 }
 .form-wrapper{
 	position: relative;
+}
+.clr {
+	display: inline-block;
+	margin-top: 5px;
+	background-color: red;
+	color:white;
 }
 input {
 	height: 20px;
@@ -129,12 +136,6 @@ label {
 	display: inline-block;
 	margin-top: 10px;
 	font: 18pt "MS Serif", "New York", serif;
-}
-span{
-	display: inline-block;
-	margin-top: 5px;
-	background-color: red;
-	color:white;
 }
 ::-webkit-input-placeholder {
 	
