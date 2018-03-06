@@ -9,9 +9,7 @@
  	errSname = document.getElementById ('errSname'),
  	errAge = document.getElementById ('errAge'),
  	clearSpan = document.getElementsByClassName('clr'),
- 	clrbutton = document.getElementById ('clrbutton'),
- 	button  = document.getElementById ('button');
-button.addEventListener ('click',reg,false);
+ 	clrbutton = document.getElementById ('clrbutton');
 clrbutton.addEventListener ('click',clr,false);
 close.addEventListener ('click', regWindOpener,false);
 inputName.addEventListener ('keyup',valid,false);
@@ -78,17 +76,23 @@ function clr (){
 	clearSpan[i].innerHTML ='';
 	input[i].value = '';
 	input[i].style.borderBottomColor =  '#3BA4C7';
-
 	}
 }
 
-function reg (){
+
+
+
+// просто открытие/закрытие формы по кнопке,и бесполезный экшн после валидации в сторонку пока их вынес.
+
+var  button  = document.getElementById ('button'),
+	 regbutton = document.getElementById('regbutton');
+button.addEventListener ('click',act,false);
+regbutton.addEventListener('click',regWindOpener,false);
+
+function act (){
 	location="http://google.com";
 }
 
-// просто открытие/закрытие формы по кнопке, в сторонку пока его вынес.
-var regbutton = document.getElementById('regbutton');
-regbutton.addEventListener('click',regWindOpener,false);
 function regWindOpener() {
 	if (form.style.display == 'none') {
 		form.style.display = 'block';
