@@ -1,0 +1,53 @@
+git init 
+
+
+git add -A
+
+
+git commit -m "MS"
+
+
+git push
+
+
+git push origin BRANCH_NAME
+
+
+
+
+git checkout BRANCH_NAME
+
+
+git checkout -b NEW_BRANCH_NAME
+
+
+
+
+git pull
+
+
+git merge origin master
+
+
+
+
+git status
+
+
+git log
+
+
+
+
+git stash
+
+
+git stash apply
+
+
+
+
+git cherry-pick HASH
+
+
+git reset  --hard HEAD~N
