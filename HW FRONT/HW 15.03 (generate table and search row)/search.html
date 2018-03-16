@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>HW</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <label for="input">Удалить из таблицы по имени:</label>
+    <input type="text" id="input">
+    <table id="table">
+        <tr>
+            <th>ИМЯ</th>
+            <th>ФАМИЛИЯ</th>
+            <th>ВОЗРАСТ</th>
+        </tr>
+    </table>
+</body>
+<script>
+var obj = [{
+        name: 'dima',
+        age: 24,
+        surname: 'ivchenko'
+    },
+    {
+        name: 'kate',
+        age: 23,
+        surname: 'sparrow'
+    },
+    {
+        name: 'Roma',
+        age: 18,
+        surname: 'ruz'
+    },
+    {
+        name: 'kolya',
+        age: 31,
+        surname: 'hoking'
+    },
+    {
+        name: 'rex',
+        age: 23,
+        surname: 'neivchenko'
+    },
+    {
+        name: 'cat',
+        age: 4,
+        surname: 'cat'
+    },
+]
+
+var input = document.getElementById('input');
+if (input.value === '') {
+    generateTable(obj)
+    var defaultTable = table.innerHTML;
+}
+input.onkeyup = search
+
+function search() {
+    table.innerHTML = '';
+    if (input.value == '') {
+        table.innerHTML = defaultTable;
+    }
+
+    var pattern = new RegExp(document.getElementById('input').value, 'gi');
+    var whatWeFound = obj.filter(function(obj) {
+        console.log(obj.name.match(pattern));
+        if (obj.name.match(pattern)) {
+            return false
+        } else {
+            return true
+        }
+
+    })
+    generateTable(whatWeFound);
+}
+
+
+
+
+function generateTable(obj) {
+    obj.map(function(obj) {
+        var table = document.getElementById("table")
+        var tr = document.createElement('tr');
+        table.appendChild(tr);
+        var tdname = document.createElement('td');
+        var tdsname = document.createElement('td');
+        var tdage = document.createElement('td');
+        tdname.innerText = obj.name;
+        tdsname.innerText = obj.surname;
+        tdage.innerText = obj.age;
+        tr.appendChild(tdname);
+        tr.appendChild(tdsname);
+        tr.appendChild(tdage);
+
+    })
+
+}
+</script>
+
+</html>
