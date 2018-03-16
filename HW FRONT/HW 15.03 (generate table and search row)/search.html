@@ -66,12 +66,12 @@ function search() {
 
     var pattern = new RegExp(document.getElementById('input').value, 'gi');
     var whatWeFound = obj.filter(function(obj) {
-        console.log(obj.name.match(pattern));
-        if (obj.name.match(pattern)) {
-            return true
-        } else {
-            return false
-        }
+    	return obj.name.match(pattern)
+       // if (obj.name.match(pattern)) {
+       //      return true
+       //  } else {
+       //      return false
+       //  }
 
     })
     generateTable(whatWeFound);
