@@ -52,10 +52,9 @@ var obj = [{
 ]
 
 var input = document.getElementById('input');
-if (input.value === '') {
-    generateTable(obj)
-    var defaultTable = table.innerHTML;
-}
+generateTable(obj)
+var defaultTable = table.innerHTML;
+
 input.onkeyup = search
 
 function search() {
