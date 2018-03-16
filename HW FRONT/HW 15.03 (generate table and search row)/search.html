@@ -61,15 +61,16 @@ function search() {
     table.innerHTML = '';
     if (input.value == '') {
         table.innerHTML = defaultTable;
+        return
     }
 
     var pattern = new RegExp(document.getElementById('input').value, 'gi');
     var whatWeFound = obj.filter(function(obj) {
         console.log(obj.name.match(pattern));
         if (obj.name.match(pattern)) {
-            return false
-        } else {
             return true
+        } else {
+            return false
         }
 
     })
