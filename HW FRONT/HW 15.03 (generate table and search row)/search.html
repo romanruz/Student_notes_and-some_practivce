@@ -65,17 +65,12 @@ function search() {
     }
 
     var pattern = new RegExp(document.getElementById('input').value, 'gi');
-    var whatWeFound = obj.filter(function(obj) {
-        return obj.name.match(pattern)
-    })
+    var whatWeFound = obj.filter(obj => obj.name.match(pattern))
     generateTable(whatWeFound);
 }
 
-
-
-
 function generateTable(obj) {
-    obj.map(function(obj) {
+    obj.map(obj => {
         var table = document.getElementById("table")
         var tr = document.createElement('tr');
         table.appendChild(tr);
@@ -88,7 +83,6 @@ function generateTable(obj) {
         tr.appendChild(tdname);
         tr.appendChild(tdsname);
         tr.appendChild(tdage);
-
     })
 
 }
