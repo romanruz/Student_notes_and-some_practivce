@@ -65,7 +65,7 @@ function search() {
     }
 
     var pattern = new RegExp(document.getElementById('input').value, 'gi');
-    var whatWeFound = obj.filter(obj => obj.name.match(pattern))
+    var whatWeFound = obj.filter(({name}) => name.match(pattern))
     generateTable(whatWeFound);
 }
 
