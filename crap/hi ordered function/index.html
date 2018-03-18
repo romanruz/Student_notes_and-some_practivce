@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>hi irdered</title>
+</head>
+
+<body>
+    <script>
+    var animals = [
+        { name: 'тузик', species: 'dog' },
+        { name: 'рубик', species: 'fish' },
+        { name: 'мурлей', species: 'cat' },
+        { name: 'рекс', species: 'dog' },
+        { name: 'jimmy', species: 'fish' }
+    ]
+
+
+    var names = animals.map(({name, species}) =>{
+        console.log(name,species);
+    })
+    console.log(names); // выводит  массив имён 
+
+     var objanimals = 
+        { name: 'тузик', species: 'dog' };
+        Object.keys(objanimals).map((a)=> {console.log(`${a} : ${objanimals[a]}`);})
+
+    var isDog = function(obj) { return obj.species === 'dog' }
+    var dogs = animals.filter(isDog);
+    console.log(dogs);
+
+
+
+    var names = [];
+    for (i = 0; i < animals.length; i++) {
+        names.push(animals[i].name);
+    }
+    console.log(names);
+
+    var arr = [1, 2, 3, 4, 5];
+    var result = arr.reduce(function(acc, item) {
+        console.log('reduce', acc, item);
+        acc += item;
+        return acc;
+    }, 0);
+
+    console.log(result);
+
+    // {
+    //     apple: 12,
+    //     oranges: 9,
+    //     pineapple: 2
+    // }
+    var names = [
+        { apple: 2, oranges: 1 },
+        { apple: 5, oranges: 4 },
+        { apple: 5, oranges: 4, pineapple: 2 },
+    ];
+
+    var ob = names.reduce((acc, cur) => {
+	Object.keys(cur).map(name => {
+            acc[name] = acc[name] ?
+                acc[name] += cur[name] :
+                cur[name]
+      });
+	return acc }, 
+	{});
+    console.log(ob);
+    </script>
+</body>
+
+</html>
