@@ -6,17 +6,17 @@
     <link rel="stylesheet" href="style.css">
     <title>Drag and Drop</title>
     <script type="text/javascript">
-//     window.onload = function(){
+    //     window.onload = function(){
 
-// 	let lists = document.getElementById("a");
-//     console.log(lists);
-// }
+    // 	let lists = document.getElementById("a");
+    //     console.log(lists);
+    // }
     </script>
 </head>
 
 <body>
     <div id="wrapper">
-        <div id = "a"  class="conteiner">
+        <div id="a" class="conteiner">
             <div class="target" draggable="true">рома</div>
             <div class="target" draggable="true"></div>
             <div class="target" draggable="true"></div>
@@ -114,20 +114,32 @@ function drop(e) {
     localStorage.setItem('body', body);
     return false;
 }
-	let a = document.getElementById('a');
- 	console.log(a);
 
 function createNewChild() {
     let list = document.getElementById('a');
-    console.log(list);
     let item = document.createElement("div");
     item.className = 'target';
-	item.draggable = true;
-	console.log(item)
+    item.draggable = true;
+    item.innerText = 'make by me'
     list.insertBefore(item, list.firstChild);
+    let cont = document.getElementsByClassName('conteiner');
+    let clas = document.getElementsByClassName('target');
+    for (let i = 0; i < clas.length; i++) {
+        clas[i].addEventListener('dragstart', dragStart, false);
+        clas[i].addEventListener('dragend', dragEnd, false);
+        clas[i].addEventListener('dragover', dragOverChild, false);
+
+
+    }
+    for (let i = 0; i < cont.length; i++) {
+        cont[i].addEventListener('dragenter', dragEnter, false);
+        cont[i].addEventListener('dragleave', dragLeave, false);
+        cont[i].addEventListener('dragover', dragOver, false);
+        cont[i].addEventListener('drop', drop, false);
+    }
+
     return
 }
-
 </script>
 
 </html>
