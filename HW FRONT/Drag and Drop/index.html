@@ -5,13 +5,6 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="style.css">
     <title>Drag and Drop</title>
-    <script type="text/javascript">
-    //     window.onload = function(){
-
-    // 	let lists = document.getElementById("a");
-    //     console.log(lists);
-    // }
-    </script>
 </head>
 
 <body>
@@ -34,42 +27,38 @@
             <div class="target" draggable="true"></div>
         </div>
         <div id="trash">
-        	<div></div>
+            <div></div>
         </div>
     </div>
 </body>
 <script>
+//Проверяем, если локал стораже пустой, загружаем дефолтную страницу
 let bodyStr = localStorage.getItem('body');
 if (bodyStr !== null) {
     let bodyStr = localStorage.getItem('body');
     let body = JSON.parse(bodyStr);
     document.body.innerHTML = body;
 }
+//
 
+//создыём новый див
 let button = document.getElementById('button');
 button.onclick = createNewChild;
+//
 
-let cont = document.getElementsByClassName('conteiner');
+// Вешаем обработчики на контейнеры
+addListener();
+
 let trash = document.getElementById('trash');
-let clas = document.getElementsByClassName('target');
-for (let i = 0; i < clas.length; i++) {
-    clas[i].addEventListener('dragstart', dragStart, false);
-    clas[i].addEventListener('dragend', dragEnd, false);
-
-}
-for (let i = 0; i < cont.length; i++) {
-    cont[i].addEventListener('dragenter', dragEnter, false);
-    cont[i].addEventListener('dragleave', dragLeave, false);
-    cont[i].addEventListener('dragover', dragOver, false);
-    cont[i].addEventListener('drop', drop, false);
-}
-
-
-trash.addEventListener('dragenter', function(e){console.log('dragenter')}, false);
+// Почему без драгоовера с e.preventDefault не  работал дроп???
+trash.addEventListener('dragover', function(e) {
+    if (e.preventDefault) e.preventDefault();
+    return false;
+}, false);
 trash.addEventListener('drop', trashFunc, false);
 
+// Функции
 function dragStart(e) {
-
     this.id = 'drag';
     this.style.border = "3px dotted #000";
     e.dataTransfer.effectAllowed = "move";
@@ -78,20 +67,15 @@ function dragStart(e) {
 }
 
 function dragEnd() {
-
     this.style.border = "";
 }
 
-function dragEnter() {
 
-    // this.style.border = "3px solid red";
-}
 
 function dragLeave() {
-
     this.style.border = "";
 }
-// отмена стандартного обработчкика
+
 function dragOver(e) {
     e.preventDefault();
     this.style.border = "3px solid red";
@@ -104,25 +88,26 @@ function drop(e) {
     if (e.stopPropagation) e.stopPropagation();
     this.style.border = "";
     let id = e.dataTransfer.getData("Text");
-    console.log(id);
     let elem = document.getElementById(id);
-    console.log(elem);
     this.insertBefore(elem, this.firstChild);
     elem.id = '';
-    let children = this.children;
+    let children = this.children; //убираю бордер всем дивам, чего то в локалсторадж с бордером загружались
     for (let i = 0; i < children.length; i++) {
         children[i].style.border = '';
     }
-    let body = JSON.stringify(document.body.innerHTML);
+    let body = JSON.stringify(document.body.innerHTML); //сохраняю в локальное хранилище
     localStorage.setItem('body', body);
     return false;
 }
 
 function trashFunc(e) {
-   if (e.preventDefault) e.preventDefault();
+    if (e.preventDefault) e.preventDefault();
     if (e.stopPropagation) e.stopPropagation();
-   console.log('drop');
-  }
+    let id = e.dataTransfer.getData("Text");
+    console.log(id); // WTF DRAG IS??
+    let elem = document.getElementById(id);
+    elem.remove();
+}
 
 function createNewChild() {
     let list = document.getElementById('a');
@@ -131,23 +116,23 @@ function createNewChild() {
     item.draggable = true;
     item.innerText = 'make by me'
     list.insertBefore(item, list.firstChild);
+    addListener();
+    return
+}
+
+function addListener() {
     let cont = document.getElementsByClassName('conteiner');
     let clas = document.getElementsByClassName('target');
     for (let i = 0; i < clas.length; i++) {
         clas[i].addEventListener('dragstart', dragStart, false);
         clas[i].addEventListener('dragend', dragEnd, false);
-        clas[i].addEventListener('dragover', dragOverChild, false);
-
-
     }
     for (let i = 0; i < cont.length; i++) {
-        cont[i].addEventListener('dragenter', dragEnter, false);
         cont[i].addEventListener('dragleave', dragLeave, false);
         cont[i].addEventListener('dragover', dragOver, false);
         cont[i].addEventListener('drop', drop, false);
     }
 
-    return
 }
 </script>
 
