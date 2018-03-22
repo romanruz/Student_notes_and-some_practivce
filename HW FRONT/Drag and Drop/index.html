@@ -10,7 +10,7 @@
 <body>
     <div id="wrapper">
         <div class="conteiner">
-            <div class="target" draggable="true"></div>
+            <div class="target" draggable="true">рома</div>
             <div class="target" draggable="true"></div>
             <div class="target" draggable="true"></div>
             <div class="target" draggable="true"></div>
@@ -28,6 +28,12 @@
     </div>
 </body>
 <script>
+let bodyStr = localStorage.getItem('body');
+if (bodyStr !== null) {
+    let body = JSON.parse(bodyStr);
+    document.body.innerHTML = body;
+}
+
 let cont = document.getElementsByClassName('conteiner');
 let clas = document.getElementsByClassName('target');
 for (let i = 0; i < clas.length; i++) {
@@ -47,7 +53,7 @@ function dragStart(e) {
     this.style.border = "3px dotted #000";
     e.dataTransfer.effectAllowed = "move";
     e.dataTransfer.setData("Text", this.id);
-    console.log(e);
+
 }
 
 function dragEnd() {
@@ -74,9 +80,21 @@ function drop(e) {
     let id = e.dataTransfer.getData("Text");
     let elem = document.getElementById(id);
     this.appendChild(elem);
-    elem.id='';
+    elem.id = '';
+    let children = this.children;
+    for (let i = 0; i < children.length; i++) {
+        children[i].style.border = '';
+    }
+    let body = JSON.stringify(document.body.innerHTML);
+    localStorage.setItem('body', body);
     return false;
 }
+let a = document.body.innerHTML;
+// console.log (a);
+let b = JSON.stringify(a);
+// console.log(b)
+let v = JSON.parse(b);
+// console.log (v);
 </script>
 
 </html>
