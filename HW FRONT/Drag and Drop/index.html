@@ -29,16 +29,16 @@
 </body>
 <script>
 let bodyStr = localStorage.getItem('body');
-if (bodyStr !== null) {
-    let body = JSON.parse(bodyStr);
-    document.body.innerHTML = body;
-}
+let body = JSON.parse(bodyStr);
+document.body.innerHTML = body;
 
 let cont = document.getElementsByClassName('conteiner');
 let clas = document.getElementsByClassName('target');
 for (let i = 0; i < clas.length; i++) {
     clas[i].addEventListener('dragstart', dragStart, false);
     clas[i].addEventListener('dragend', dragEnd, false);
+    clas[i].addEventListener('dragover', dragOverChild, false);
+
 
 }
 for (let i = 0; i < cont.length; i++) {
@@ -49,6 +49,7 @@ for (let i = 0; i < cont.length; i++) {
 }
 
 function dragStart(e) {
+    console.log('dragstart')
     this.id = 'drag';
     this.style.border = "3px dotted #000";
     e.dataTransfer.effectAllowed = "move";
@@ -57,20 +58,30 @@ function dragStart(e) {
 }
 
 function dragEnd() {
+
     this.style.border = "";
 }
 
 function dragEnter() {
+
     this.style.border = "3px solid red";
 }
 
 function dragLeave() {
+
     this.style.border = "";
 }
 // отмена стандартного обработчкика
 function dragOver(e) {
+
+    this.style.border = "3px solid red";
     if (e.preventDefault) e.preventDefault();
     return false;
+}
+
+function dragOverChild() {
+    console.log('44444')
+    this.parentNode.style.border = "3px solid red";
 }
 
 function drop(e) {
