@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <title>Drag and Drop</title>
+</head>
+
+<body>
+    <div id="wrapper">
+        <div class="conteiner">
+            <div class="target" draggable="true"></div>
+            <div class="target" draggable="true"></div>
+            <div class="target" draggable="true"></div>
+            <div class="target" draggable="true"></div>
+            <div class="target" draggable="true"></div>
+            <div class="target" draggable="true"></div>
+        </div>
+        <div class="conteiner">
+            <div class="target" draggable="true"></div>
+            <div class="target" draggable="true"></div>
+            <div class="target" draggable="true"></div>
+            <div class="target" draggable="true"></div>
+            <div class="target" draggable="true"></div>
+            <div class="target" draggable="true"></div>
+        </div>
+    </div>
+</body>
+<script>
+let cont = document.getElementsByClassName('conteiner');
+let clas = document.getElementsByClassName('target');
+for (let i = 0; i < clas.length; i++) {
+    clas[i].addEventListener('dragstart', dragStart, false);
+    clas[i].addEventListener('dragend', dragEnd, false);
+
+}
+for (let i = 0; i < cont.length; i++) {
+    cont[i].addEventListener('dragenter', dragEnter, false);
+    cont[i].addEventListener('dragleave', dragLeave, false);
+    cont[i].addEventListener('dragover', dragOver, false);
+    cont[i].addEventListener('drop', drop, false);
+}
+
+function dragStart(e) {
+    this.id = 'drag';
+    this.style.border = "3px dotted #000";
+    e.dataTransfer.effectAllowed = "move";
+    e.dataTransfer.setData("Text", this.id);
+    console.log(e);
+}
+
+function dragEnd() {
+    this.style.border = "";
+}
+
+function dragEnter() {
+    this.style.border = "3px solid red";
+}
+
+function dragLeave() {
+    this.style.border = "";
+}
+// отмена стандартного обработчкика
+function dragOver(e) {
+    if (e.preventDefault) e.preventDefault();
+    return false;
+}
+
+function drop(e) {
+    if (e.preventDefault) e.preventDefault();
+    if (e.stopPropagation) e.stopPropagation();
+    this.style.border = "";
+    let id = e.dataTransfer.getData("Text");
+    let elem = document.getElementById(id);
+    this.appendChild(elem);
+    elem.id='';
+    return false;
+}
+</script>
+
+</html>

@@ -1,0 +1,21 @@
+.conteiner {
+	margin: 5px;
+	padding: 5px;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: stretch;
+	background-color: grey;
+	width: 200px;
+	border-radius: 5%;
+}
+.target {
+	margin: 5%;
+	border-radius: 5%;
+	background-color: white;
+	height: 20px;
+}
+#wrapper {
+	display: flex;
+
+}
