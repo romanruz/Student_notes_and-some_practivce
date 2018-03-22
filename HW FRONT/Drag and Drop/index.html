@@ -5,17 +5,25 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="style.css">
     <title>Drag and Drop</title>
+    <script type="text/javascript">
+//     window.onload = function(){
+
+// 	let lists = document.getElementById("a");
+//     console.log(lists);
+// }
+    </script>
 </head>
 
 <body>
     <div id="wrapper">
-        <div class="conteiner">
+        <div id = "a"  class="conteiner">
             <div class="target" draggable="true">рома</div>
             <div class="target" draggable="true"></div>
             <div class="target" draggable="true"></div>
             <div class="target" draggable="true"></div>
             <div class="target" draggable="true"></div>
             <div class="target" draggable="true"></div>
+            <button id='button'>Добавить поле</button>
         </div>
         <div class="conteiner">
             <div class="target" draggable="true"></div>
@@ -29,9 +37,14 @@
 </body>
 <script>
 let bodyStr = localStorage.getItem('body');
-let body = JSON.parse(bodyStr);
-document.body.innerHTML = body;
+if (bodyStr !== null) {
+    let bodyStr = localStorage.getItem('body');
+    let body = JSON.parse(bodyStr);
+    document.body.innerHTML = body;
+}
 
+let button = document.getElementById('button');
+button.onclick = createNewChild;
 let cont = document.getElementsByClassName('conteiner');
 let clas = document.getElementsByClassName('target');
 for (let i = 0; i < clas.length; i++) {
@@ -49,7 +62,7 @@ for (let i = 0; i < cont.length; i++) {
 }
 
 function dragStart(e) {
-    console.log('dragstart')
+
     this.id = 'drag';
     this.style.border = "3px dotted #000";
     e.dataTransfer.effectAllowed = "move";
@@ -64,7 +77,7 @@ function dragEnd() {
 
 function dragEnter() {
 
-    this.style.border = "3px solid red";
+    // this.style.border = "3px solid red";
 }
 
 function dragLeave() {
@@ -73,15 +86,15 @@ function dragLeave() {
 }
 // отмена стандартного обработчкика
 function dragOver(e) {
-
+    e.preventDefault();
     this.style.border = "3px solid red";
     if (e.preventDefault) e.preventDefault();
     return false;
 }
 
 function dragOverChild() {
-    console.log('44444')
-    this.parentNode.style.border = "3px solid red";
+
+    // this.parentNode.style.border = "3px solid red";
 }
 
 function drop(e) {
@@ -90,7 +103,8 @@ function drop(e) {
     this.style.border = "";
     let id = e.dataTransfer.getData("Text");
     let elem = document.getElementById(id);
-    this.appendChild(elem);
+    this.insertBefore(elem, this.firstChild);
+
     elem.id = '';
     let children = this.children;
     for (let i = 0; i < children.length; i++) {
@@ -100,12 +114,20 @@ function drop(e) {
     localStorage.setItem('body', body);
     return false;
 }
-let a = document.body.innerHTML;
-// console.log (a);
-let b = JSON.stringify(a);
-// console.log(b)
-let v = JSON.parse(b);
-// console.log (v);
+	let a = document.getElementById('a');
+ 	console.log(a);
+
+function createNewChild() {
+    let list = document.getElementById('a');
+    console.log(list);
+    let item = document.createElement("div");
+    item.className = 'target';
+	item.draggable = true;
+	console.log(item)
+    list.insertBefore(item, list.firstChild);
+    return
+}
+
 </script>
 
 </html>
