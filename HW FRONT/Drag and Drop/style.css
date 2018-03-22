@@ -16,9 +16,14 @@
 	height: 20px;
 }
 #wrapper {
-	align-items: baseline;
+	align-items: end;
 	display: flex;
 
+}
+#trash{
+	background: url(Trash.png)no-repeat;
+	width: 80px;
+	height: 110px;
 }
 * {
     box-sizing: border-box;

@@ -33,6 +33,8 @@
             <div class="target" draggable="true"></div>
             <div class="target" draggable="true"></div>
         </div>
+        <div id="trash">
+        </div>
     </div>
 </body>
 <script>
@@ -45,13 +47,13 @@ if (bodyStr !== null) {
 
 let button = document.getElementById('button');
 button.onclick = createNewChild;
+let trash = document.getElementById('trash');
+trash.addEventListener('dragover', trashFunc, false);
 let cont = document.getElementsByClassName('conteiner');
 let clas = document.getElementsByClassName('target');
 for (let i = 0; i < clas.length; i++) {
     clas[i].addEventListener('dragstart', dragStart, false);
     clas[i].addEventListener('dragend', dragEnd, false);
-    clas[i].addEventListener('dragover', dragOverChild, false);
-
 
 }
 for (let i = 0; i < cont.length; i++) {
@@ -92,19 +94,15 @@ function dragOver(e) {
     return false;
 }
 
-function dragOverChild() {
-
-    // this.parentNode.style.border = "3px solid red";
-}
-
 function drop(e) {
     if (e.preventDefault) e.preventDefault();
     if (e.stopPropagation) e.stopPropagation();
     this.style.border = "";
     let id = e.dataTransfer.getData("Text");
+    console.log(id);
     let elem = document.getElementById(id);
+    console.log(elem);
     this.insertBefore(elem, this.firstChild);
-
     elem.id = '';
     let children = this.children;
     for (let i = 0; i < children.length; i++) {
@@ -113,6 +111,15 @@ function drop(e) {
     let body = JSON.stringify(document.body.innerHTML);
     localStorage.setItem('body', body);
     return false;
+}
+
+function trashFunc(e) {
+    console.log('in');
+    let id = e.dataTransfer.getData("Text");
+    console.log(id);
+    let elem = document.getElementById(id);
+    console.log(elem);
+
 }
 
 function createNewChild() {
