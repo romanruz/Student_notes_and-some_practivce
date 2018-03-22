@@ -34,6 +34,7 @@
             <div class="target" draggable="true"></div>
         </div>
         <div id="trash">
+        	<div></div>
         </div>
     </div>
 </body>
@@ -47,9 +48,9 @@ if (bodyStr !== null) {
 
 let button = document.getElementById('button');
 button.onclick = createNewChild;
-let trash = document.getElementById('trash');
-trash.addEventListener('dragover', trashFunc, false);
+
 let cont = document.getElementsByClassName('conteiner');
+let trash = document.getElementById('trash');
 let clas = document.getElementsByClassName('target');
 for (let i = 0; i < clas.length; i++) {
     clas[i].addEventListener('dragstart', dragStart, false);
@@ -62,6 +63,10 @@ for (let i = 0; i < cont.length; i++) {
     cont[i].addEventListener('dragover', dragOver, false);
     cont[i].addEventListener('drop', drop, false);
 }
+
+
+trash.addEventListener('dragenter', function(e){console.log('dragenter')}, false);
+trash.addEventListener('drop', trashFunc, false);
 
 function dragStart(e) {
 
@@ -114,13 +119,10 @@ function drop(e) {
 }
 
 function trashFunc(e) {
-    console.log('in');
-    let id = e.dataTransfer.getData("Text");
-    console.log(id);
-    let elem = document.getElementById(id);
-    console.log(elem);
-
-}
+   if (e.preventDefault) e.preventDefault();
+    if (e.stopPropagation) e.stopPropagation();
+   console.log('drop');
+  }
 
 function createNewChild() {
     let list = document.getElementById('a');
