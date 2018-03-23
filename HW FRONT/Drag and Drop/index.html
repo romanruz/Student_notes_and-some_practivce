@@ -16,6 +16,10 @@
             <div class="target" draggable="true"></div>
             <div class="target" draggable="true"></div>
             <div class="target" draggable="true"></div>
+            <div style="display: none" id="addblock">
+                <input type="text" placeholder="Введите текст" id="input"><br/>
+                <button id="makeBut">Добавить</button>
+            </div>
             <button id='button'>Добавить поле</button>
         </div>
         <div class="conteiner">
@@ -42,8 +46,10 @@ if (bodyStr !== null) {
 //
 
 //создыём новый див
+let makeBut = document.getElementById('makeBut');
+makeBut.onclick = createNewChild;
 let button = document.getElementById('button');
-button.onclick = createNewChild;
+button.onclick = addBlock;
 //
 
 // Вешаем обработчики на контейнеры
@@ -110,12 +116,16 @@ function trashFunc(e) {
 }
 
 function createNewChild() {
+	let block = document.getElementById('addblock');
+	let input = document.getElementById('input')
     let list = document.getElementById('a');
     let item = document.createElement("div");
     item.className = 'target';
     item.draggable = true;
-    item.innerText = 'make by me'
-    list.insertBefore(item, list.firstChild);
+    item.innerText = input.value;
+    block.style.display = 'none';
+    input.value = '';
+	list.insertBefore(item, list.firstChild);
     addListener();
     return
 }
@@ -133,6 +143,11 @@ function addListener() {
         cont[i].addEventListener('drop', drop, false);
     }
 
+}
+
+function addBlock(){
+	let block = document.getElementById('addblock');
+	block.style.display = 'inline-block';
 }
 </script>
 
