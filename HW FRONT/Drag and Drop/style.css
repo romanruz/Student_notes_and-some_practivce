@@ -1,31 +1,60 @@
 .conteiner {
-	margin: 5px;
-	padding: 5px;
-	display: flex;
-	flex-direction: column;
-	justify-content: flex-start;
-	align-items: stretch;
-	background-color: grey;
-	width: 200px;
-	border-radius: 5%;
+    margin: 5px;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+    background-color: grey;
+    width: 200px;
+    border-radius: 5%;
 }
-.target {
-	word-wrap: break-word;
-	margin: 5%;
-	border-radius: 5%;
-	background-color: white;
-	
-}
-#wrapper {
-	align-items: end;
-	display: flex;
 
+.target {
+    padding: 5px;
+    white-space: pre
+	height: 100%
+    word-wrap: break-word;
+    margin: 5%;
+    border-radius: 4px;
+    background-color: white;
 }
-#trash{
-	background: url(Trash.png)no-repeat;
-	width: 80px;
-	height: 110px;
+
+#wrapper {
+    align-items: end;
+    display: flex;
 }
+
+#newBlock {
+    margin-left: 7px;
+text-decoration:none; 
+ text-align:center; 
+ padding:6px 37px; 
+ border:solid 1px #4a6773; 
+ -webkit-border-radius:4px;
+ -moz-border-radius:4px; 
+ border-radius: 4px; 
+ font:11px Arial, Helvetica, sans-serif; 
+ font-weight:bold; 
+ color:#ffffff; 
+ background-color:#3d5057; 
+ background-image: -moz-linear-gradient(top, #3d5057 0%, #74888f 100%); 
+ background-image: -webkit-linear-gradient(top, #3d5057 0%, #74888f 100%); 
+ background-image: -o-linear-gradient(top, #3d5057 0%, #74888f 100%); 
+ background-image: -ms-linear-gradient(top, #3d5057 0% ,#74888f 100%); 
+ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#74888f', endColorstr='#74888f',GradientType=0 ); 
+ background-image: linear-gradient(top, #3d5057 0% ,#74888f 100%);   
+ -webkit-box-shadow:0px 0px 2px #bababa, inset 0px 0px 1px #ffffff; 
+ -moz-box-shadow: 0px 0px 2px #bababa,  inset 0px 0px 1px #ffffff;  
+ box-shadow:0px 0px 2px #bababa, inset 0px 0px 1px #ffffff;  
+}
+
+#trash {
+    background: url(Trash.png)no-repeat;
+    width: 80px;
+    height: 110px;
+}
+
 * {
     box-sizing: border-box;
 }

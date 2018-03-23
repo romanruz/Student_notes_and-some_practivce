@@ -8,27 +8,22 @@
 </head>
 
 <body>
+    <button id="newBlock">
+        Добавить новый блок
+    </button>
     <div id="wrapper">
         <div id="a" class="conteiner">
-            <div class="target" draggable="true">рома</div>
-            <div class="target" draggable="true"></div>
-            <div class="target" draggable="true"></div>
-            <div class="target" draggable="true"></div>
-            <div class="target" draggable="true"></div>
-            <div class="target" draggable="true"></div>
+            <div class="target" draggable="true"> &uarr; Создать новый блок</div>
+            <div class="target" draggable="true">&#8595; Добавить новое поле</div>
             <div style="display: none" id="addblock">
-                <input type="text" placeholder="Введите текст" id="input"><br/>
+                <input type="text" placeholder="Введите текст" id="input">
+                <br/>
                 <button id="makeBut">Добавить</button>
             </div>
             <button id='button'>Добавить поле</button>
         </div>
-        <div class="conteiner">
-            <div class="target" draggable="true"></div>
-            <div class="target" draggable="true"></div>
-            <div class="target" draggable="true"></div>
-            <div class="target" draggable="true"></div>
-            <div class="target" draggable="true"></div>
-            <div class="target" draggable="true"></div>
+        <div class="conteiner" draggable="true">
+            <div class="target" draggable="true">попробуйте перетянуть сюда элементы</div>
         </div>
         <div id="trash">
             <div></div>
@@ -50,6 +45,8 @@ let makeBut = document.getElementById('makeBut');
 makeBut.onclick = createNewChild;
 let button = document.getElementById('button');
 button.onclick = addBlock;
+let addNewblock = document.getElementById('newBlock');
+addNewblock.onclick = newBlock;
 //
 
 // Вешаем обработчики на контейнеры
@@ -69,14 +66,27 @@ function dragStart(e) {
     this.style.border = "3px dotted #000";
     e.dataTransfer.effectAllowed = "move";
     e.dataTransfer.setData("Text", this.id);
+}
 
+function dragContStart(e) {
+    if (e.target.className == 'target') {
+        return;
+    }
+
+    this.id = 'dragCont';
+    e.dataTransfer.effectAllowed = "move";
+    e.dataTransfer.setData("Text", this.id);
 }
 
 function dragEnd() {
-    this.style.border = "";
+    if (this.id == 'drag') {
+        this.style.border = "";
+    }
+    if (this.id == 'a') {
+        return;
+    }
+    this.id = '';
 }
-
-
 
 function dragLeave() {
     this.style.border = "";
@@ -94,9 +104,12 @@ function drop(e) {
     if (e.stopPropagation) e.stopPropagation();
     this.style.border = "";
     let id = e.dataTransfer.getData("Text");
+    if (id == 'dragCont') {
+        dragEnd();
+        return;
+    }
     let elem = document.getElementById(id);
     this.insertBefore(elem, this.firstChild);
-    elem.id = '';
     let children = this.children; //убираю бордер всем дивам, чего то в локалсторадж с бордером загружались
     for (let i = 0; i < children.length; i++) {
         children[i].style.border = '';
@@ -110,22 +123,24 @@ function trashFunc(e) {
     if (e.preventDefault) e.preventDefault();
     if (e.stopPropagation) e.stopPropagation();
     let id = e.dataTransfer.getData("Text");
-    console.log(id); // WTF DRAG IS??
     let elem = document.getElementById(id);
     elem.remove();
 }
 
 function createNewChild() {
-	let block = document.getElementById('addblock');
-	let input = document.getElementById('input')
+    let block = document.getElementById('addblock');
+    let input = document.getElementById('input')
     let list = document.getElementById('a');
     let item = document.createElement("div");
     item.className = 'target';
     item.draggable = true;
-    item.innerText = input.value;
+    if (input.value == '') {
+        console.log('111')
+        item.innerText = '#Заглушка';
+    } else { item.innerText = input.value; }
     block.style.display = 'none';
     input.value = '';
-	list.insertBefore(item, list.firstChild);
+    list.insertBefore(item, list.firstChild);
     addListener();
     return
 }
@@ -138,6 +153,8 @@ function addListener() {
         clas[i].addEventListener('dragend', dragEnd, false);
     }
     for (let i = 0; i < cont.length; i++) {
+        cont[i].addEventListener('dragstart', dragContStart, false);
+        cont[i].addEventListener('dragend', dragEnd, false);
         cont[i].addEventListener('dragleave', dragLeave, false);
         cont[i].addEventListener('dragover', dragOver, false);
         cont[i].addEventListener('drop', drop, false);
@@ -145,9 +162,24 @@ function addListener() {
 
 }
 
-function addBlock(){
-	let block = document.getElementById('addblock');
-	block.style.display = 'inline-block';
+function addBlock() {
+    let block = document.getElementById('addblock');
+    block.style.display = 'inline-block';
+}
+
+function newBlock() {
+    let wrapper = document.getElementById('wrapper');
+    let trash = document.getElementById('trash')
+    let item = document.createElement("div");
+    let innerDiv = document.createElement("div");
+    innerDiv.className = 'target';
+    innerDiv.draggable = 'true';
+    innerDiv.innerText = '#Заглушка';
+    item.appendChild(innerDiv);
+    item.className = 'conteiner';
+    item.draggable = 'true';
+    wrapper.insertBefore(item, trash);
+    addListener()
 }
 </script>
 
