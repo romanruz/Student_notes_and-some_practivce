@@ -164,7 +164,10 @@ function addListener() {
 
 function addBlock() {
     let block = document.getElementById('addblock');
-    block.style.display = 'inline-block';
+    if(block.style.display == 'inline-block'){
+    	block.style.display = 'none';
+    }else{block.style.display = 'inline-block'}
+    
 }
 
 function newBlock() {
