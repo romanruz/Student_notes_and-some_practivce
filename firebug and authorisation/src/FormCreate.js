@@ -10,6 +10,7 @@ const FormCreate = ({ onSubmit, initialValues }) => (
       onSubmit={onSubmit}
       initialValues={initialValues}
       render={({ handleSubmit, reset, submitting, pristine, values }) => (
+        
         <form onSubmit={handleSubmit}>
           <div>
             <label>First Name</label>
@@ -43,7 +44,34 @@ const FormCreate = ({ onSubmit, initialValues }) => (
               Submit
             </button>
           </div>
+           <div>
+            <label>Город</label>
+            <Field name="city" component="select">
+              <option value="Киев">Киев</option>
+              <option value="Не Киев">Не Киев</option>
+            </Field>
+          </div>
+          Пол:
+           <label>
+                <Field
+                  name="sex"
+                  component="input"
+                  type="radio"
+                  value="man"
+                />{' '}
+                Мужской
+              </label>
+               <label>
+                <Field
+                  name="sex"
+                  component="input"
+                  type="radio"
+                  value="wman"
+                />{' '}
+                Женский
+              </label>
           <pre>{JSON.stringify(values, 0, 2)}</pre>
+          {console.log(values.city)}
         </form>
       )}
     />

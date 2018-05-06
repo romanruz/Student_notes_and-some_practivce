@@ -7,6 +7,7 @@ import firebase from "./firebase";
 
 class App extends Component {
   state = { list: [] };
+
   componentDidMount() {
     const listRef = firebase.database().ref("list");
     listRef.on("value", snapshot => {
@@ -14,6 +15,7 @@ class App extends Component {
       this.setState({
         list: list
       });
+      
     });
   }
 
@@ -23,15 +25,17 @@ class App extends Component {
   }
   render() {
     const { list } = this.state;
-    console.log(list);
+    
     return (
       <div>
         <FormCreate onSubmit={this.onSubmit} />
         <ul>
+        {console.log(list)}
           {Object.entries(list).map(([key, { firstName, lastName, email }]) => (
             <li key={key}>
               {`${firstName} - ${lastName}: ${email}`}
               <Link to={key}>Edit</Link>
+              
             </li>
           ))}
         </ul>
