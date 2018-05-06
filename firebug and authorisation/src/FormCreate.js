@@ -1,7 +1,8 @@
 import React from "react";
 import Styles from "./Styles";
 import { Form, Field } from "react-final-form";
-
+import Radio from "./RadioBtn"
+import Select from "./Select"
 const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
 
 const FormCreate = ({ onSubmit, initialValues }) => (
@@ -44,32 +45,17 @@ const FormCreate = ({ onSubmit, initialValues }) => (
               Submit
             </button>
           </div>
-           <div>
-            <label>Город</label>
-            <Field name="city" component="select">
-              <option value="Киев">Киев</option>
-              <option value="Не Киев">Не Киев</option>
-            </Field>
-          </div>
+         
+          <Select/>
           Пол:
-           <label>
-                <Field
-                  name="sex"
-                  component="input"
-                  type="radio"
-                  value="man"
-                />{' '}
-                Мужской
-              </label>
-               <label>
-                <Field
-                  name="sex"
-                  component="input"
-                  type="radio"
-                  value="wman"
-                />{' '}
-                Женский
-              </label>
+              <Radio 
+              sex='wman'
+              child='Женский'
+              />
+              <Radio 
+              sex='man'
+              child='Мужской'
+              />
           <pre>{JSON.stringify(values, 0, 2)}</pre>
           {console.log(values.city)}
         </form>
