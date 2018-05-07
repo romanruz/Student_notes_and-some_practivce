@@ -29,7 +29,7 @@ class EditFormPage extends Component {
   }
   render() {
     const { item } = this.state;
-    console.log("item", item);
+    
     if (!Object.keys(item).length) {
       return <div>Loading...</div>;
     }

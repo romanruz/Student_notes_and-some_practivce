@@ -7,7 +7,7 @@ import { Form, Field } from "react-final-form";
 class Radio extends Component {
 
   render() {
-   console.log(this.props);
+   
     return (
      <label>
          		<Field

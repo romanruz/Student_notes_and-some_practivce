@@ -30,7 +30,7 @@ class App extends Component {
       <div>
         <FormCreate onSubmit={this.onSubmit} />
         <ul>
-        {console.log(list)}
+       
           {Object.entries(list).map(([key, { firstName, lastName, email }]) => (
             <li key={key}>
               {`${firstName} - ${lastName}: ${email}`}
