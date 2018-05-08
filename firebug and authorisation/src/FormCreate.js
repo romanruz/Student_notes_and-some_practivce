@@ -14,35 +14,35 @@ const FormCreate = ({ onSubmit, initialValues }) => (
       render={({ handleSubmit, reset, submitting, pristine, values }) => (
         
         <form onSubmit={handleSubmit}>
-        
+      
           <Input 
+          component={Input}
           placeholder='FirstName'
           name="FirstName" 
           />
           <Input
-          
           placeholder='LastName'
           name='LastName'
           />
-        <Input
+          <Input
         placeholder='Email'
         name='Email'
-        />
+          />
           <Select/>
-          Пол:
-              <Radio 
-              sex='wman'
-              child='Женский'
-              />
-              <Radio 
-              sex='man'
-              child='Мужской'
-              />
-              <div className="buttons">
-            <button type="submit" disabled={submitting || pristine}>
-              Submit
-            </button>
-          </div>
+            Пол:
+                <Radio 
+                sex='wman'
+                child='Женский'
+                />
+                <Radio 
+                sex='man'
+                child='Мужской'
+                />
+                <div className="buttons">
+              <button type="submit" disabled={submitting || pristine}>
+                Submit
+              </button>
+            </div>
 
           <pre>{JSON.stringify(values, 0, 2)}</pre>
          
