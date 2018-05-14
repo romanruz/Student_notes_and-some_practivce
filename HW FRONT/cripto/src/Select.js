@@ -101,7 +101,7 @@ convertClick = ()=>{
               <option value="EURO">EURO</option>
               <option value="GRN">GRN</option>
             </select>
-            <span>Bitcoin{this.criptoCurrencyCalc(this.state.value,'bitcoinPrice')}</span> 
+            <span>Bitcoin{this.criptoCurrencyCalc(this.state.value,'bitcoinPrice')}</span>
             <span>Etherium{this.criptoCurrencyCalc(this.state.value,'etheriumPrice')}</span>
             <span>Ripple{this.criptoCurrencyCalc(this.state.value,'ripplePrice')}</span> 
             <span>Cardano{this.criptoCurrencyCalc(this.state.value,'cardanoPrice')}</span>

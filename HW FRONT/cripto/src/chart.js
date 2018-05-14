@@ -8,7 +8,7 @@ class Chart extends Component {
 	constructor(props){
 		super(props);
 		this.state = {
-			currensy:'',
+			currency:'',
 			time:''
 		}
 		
@@ -16,18 +16,19 @@ class Chart extends Component {
 
 	handleData (data){
 		 let result = JSON.parse(data)	
-		 arr.push(result.events["0"].price)
-		 if(arr.length>6){
+		 arr.push(+result.events["0"].price)
+		 if(arr.length>5){
 		 	arr.shift()
 		 }
-		 
-		 time.push(new Date(result.timestamp).toLocaleTimeString())
-		 if(time.length>6){
+		 let a = arr.join(',')
+		 time.push(new Date(result.timestampms).toLocaleTimeString())
+		 if(time.length>5){
 		 	time.shift()
 		 }
-		 this.setState({currensy:arr})
-		 this.setState({time:time})
-		console.log (this.state)
+		 let b = time.join(',')
+		 this.setState({currency:a})
+		 this.setState({time:b})
+		
 		 
 
 	}
@@ -40,7 +41,7 @@ class Chart extends Component {
 				datasets:[
 				{
 					label:'Bitcoin',
-					data:[`${this.state.currensy}`],
+					data:[`${this.state.currency}`],
 			         backgroundColor:[
 				         'rgba(255, 99, 132, 0.6)',
 			              'rgba(54, 162, 235, 0.6)',
