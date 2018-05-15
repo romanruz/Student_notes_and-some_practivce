@@ -12,27 +12,22 @@ class SelectArchive extends Component {
 	}
 
 	componentDidMount() {
-		// axios.get(`https://api.coindesk.com/v1/bpi/historical/close.json?start=${this.state.selectValue ==='month'?this.DateFunction(30):this.state.selectValue ==='day'?this.DateFunction(2):this.DateFunction(360)}&end=${this.DateFunction(0)}`)
-		//  .then (res=>{
-		//  	this.setState({year:{labels:Object.keys(res.data.bpi),data:Object.values(res.data.bpi)}})
-		//  	console.log (Object.keys(res.data.bpi))
-		//  })
+		axios.get(`https://api.coindesk.com/v1/bpi/historical/close.json?start=${this.state.selectValue ==='month'?this.DateFunction(30):this.state.selectValue ==='day'?this.DateFunction(2):this.DateFunction(360)}&end=${this.DateFunction(1)}`)
+		 .then (res=>{
+		 	this.setState({year:{labels:Object.keys(res.data.bpi),data:Object.values(res.data.bpi)}})
+		 })
 	}
 
 	DateFunction = (day)=>{
 		let date  = new Date()
-			// console.log(new Date(date.setDate(date.getDate()-day)).toISOString().substring(0, 10))
 			return new Date(date.setDate(date.getDate()-day)).toISOString().substring(0, 10);
 	}
 	onChangeHandler = (e)=>{
 		this.setState({selectValue:e.target.value});
-		axios.get(`https://api.coindesk.com/v1/bpi/historical/close.json?start=${this.state.selectValue ==='month'?this.DateFunction(30):this.state.selectValue ==='day'?this.DateFunction(2):this.DateFunction(360)}&end=${this.DateFunction(0)}`)
+		axios.get(`https://api.coindesk.com/v1/bpi/historical/close.json?start=${e.target.value ==='month'?this.DateFunction(30):e.target.value ==='day'?this.DateFunction(2):this.DateFunction(360)}&end=${this.DateFunction(0)}`)
 		 	.then (res=>{
 		 		this.setState({year:{labels:Object.keys(res.data.bpi),data:Object.values(res.data.bpi)}})
 		 		})
-		
-	
-
 	}
 	render(){
 		return(
@@ -75,9 +70,7 @@ class SelectArchive extends Component {
               maintainAspectRatio: true
             }}
           />
-          </div>
-
-         
+          </div>    
 		)
 	}
 }

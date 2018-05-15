@@ -8,8 +8,6 @@ class Chart extends Component {
   state = {
     data: undefined
   };
-
-
   handleData(data) {
     let result = JSON.parse(data);
     this.time.push(new Date(result.timestampms).toLocaleTimeString()) 

@@ -8,37 +8,13 @@ class Select extends Component {
 constructor(props){
   super(props);
   this.state = {
-    value:'',
-    USD: {
-      bitcoinUSDPrice:'',
-      etheriumUSDPrice:'',
-      rippleUSDPrice:'',
-      cardanoUSDPrice:'',
-      litecoineUSDPrice:'',
-    },
-    EURO: {
-      bitcoinEUROPrice:'',
-      etheriumEUROPrice:'',
-      rippleEUROPrice:'',
-      cardanoEUROPrice:'',
-      litecoineEUROPrice:'',
-    },
-    RUB: {
-      bitcoinRUBPrice:'',
-      etheriumRUBPrice:'',
-      rippleRUBPrice:'',
-      cardanoRUBPrice:'',
-      litecoineRUBPrice:'',
-    }
-
-    
+    value:'',  
   };
 }
 componentDidMount() {
     axios.get(`https://api.coinmarketcap.com/v2/ticker/?convert=EUR`)
       .then(res => {
         const coin  = res;
-     
         this.setState({
           USD:{ bitcoinPrice:this.getApi(coin,'USD',1),
                 etheriumPrice:this.getApi(coin,'USD',1027),
@@ -49,8 +25,7 @@ componentDidMount() {
                 etheriumPrice:this.getApi(coin,'EUR',1027),
                 ripplePrice:this.getApi(coin,'EUR',52),
                 cardanoPrice:this.getApi(coin,'EUR',2010),
-                litecoinePrice:this.getApi(coin,'EUR',2)}
-          
+                litecoinePrice:this.getApi(coin,'EUR',2)} 
         });
       })
   axios.get(`https://api.coinmarketcap.com/v2/ticker/?convert=RUB`)
@@ -69,12 +44,8 @@ componentDidMount() {
     })
   }
 
- 
-
 onChangeHandler = (e)=>{
   this.setState({value:e.target.value});  
-  console.log (this.state.value)
-    console.log (e.target.value)
 }
 criptoCurrencyCalc = (currency,cripta)=>{
   if(currency === 'USD'){
@@ -101,11 +72,23 @@ getApi = (json,currency,currencyId)=>{
   }
 }
 convertClick = ()=>{
-  let calc = (this.valueInput.value)*(this.state[this.state.value][this.convertSelect.value])
+  if (this.state.value ===''){
+    alert('choose currensy');
+    return
+  }
+ if (this.valueInput.value.match(/^[-\+]?\d+/) === null) {
+  alert('input value');
+  return
+}
+if (this.convertSelect.value === 'title'){
+  alert('choose cripta epta');
+  return
+}
+  let num = parseInt(this.valueInput.value.replace(/\D+/g,""));
+  let calc = (num)*(this.state[this.state.value][this.convertSelect.value])
   calc.toFixed(1)
-  console.log (calc);
   let currency = this.convertSelect.value.split(/[A-Z]/)
-  let answer = `За ${this.valueInput.value} ${currency[0]} вы получите ${calc.toFixed(2)} ${this.state.value} `
+  let answer = `За ${num} ${currency[0]} вы получите ${calc.toFixed(2)} ${this.state.value} `
   this.span.innerText = answer
 }
 
@@ -139,16 +122,11 @@ convertClick = ()=>{
               <br/>
               <button onClick={this.convertClick}>CONVERT</button>
               <br/>
-           
             <span ref={(span)=>this.span = span}></span>
             </div>
             <Chart />
             <SelectArchive />
-        </div>
-        
-        
-        
-          
+        </div>    
     );
   }
 }
