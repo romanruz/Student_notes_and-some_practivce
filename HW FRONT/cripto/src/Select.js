@@ -73,6 +73,8 @@ componentDidMount() {
 
 onChangeHandler = (e)=>{
   this.setState({value:e.target.value});  
+  console.log (this.state.value)
+    console.log (e.target.value)
 }
 criptoCurrencyCalc = (currency,cripta)=>{
   if(currency === 'USD'){
@@ -84,7 +86,6 @@ criptoCurrencyCalc = (currency,cripta)=>{
 
   }
   if(currency === 'RUB'){
-    console.log('chek')
     return this.state.RUB[cripta]
   }
 }
