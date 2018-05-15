@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import axios from 'axios';
 import Chart from './chart'
+import SelectArchive from './SelectArchive'
 
 
 class Select extends Component {
@@ -13,21 +14,21 @@ constructor(props){
       etheriumUSDPrice:'',
       rippleUSDPrice:'',
       cardanoUSDPrice:'',
-      liteCoineUSDPrice:'',
+      litecoineUSDPrice:'',
     },
     EURO: {
       bitcoinEUROPrice:'',
       etheriumEUROPrice:'',
       rippleEUROPrice:'',
       cardanoEUROPrice:'',
-      liteCoineEUROPrice:'',
+      litecoineEUROPrice:'',
     },
     RUB: {
-      bitcoinEUROPrice:'',
-      etheriumEUROPrice:'',
-      rippleEUROPrice:'',
-      cardanoEUROPrice:'',
-      liteCoineEUROPrice:'',
+      bitcoinRUBPrice:'',
+      etheriumRUBPrice:'',
+      rippleRUBPrice:'',
+      cardanoRUBPrice:'',
+      litecoineRUBPrice:'',
     }
 
     
@@ -40,18 +41,32 @@ componentDidMount() {
      
         this.setState({
           USD:{ bitcoinPrice:this.getApi(coin,'USD',1),
-                etheriumPrice:coin.data.data[1027].quotes.USD.price,
-                ripplePrice:coin.data.data[52].quotes.USD.price,
-                cardanoPrice:coin.data.data[2010].quotes.USD.price,
-                liteCoinePrice:coin.data.data[2].quotes.USD.price},
+                etheriumPrice:this.getApi(coin,'USD',1027),
+                ripplePrice:this.getApi(coin,'USD',52),
+                cardanoPrice:this.getApi(coin,'USD',2010),
+                litecoinePrice:this.getApi(coin,'USD',2)},
           EURO:{bitcoinPrice:this.getApi(coin,'EUR',1),
-                etheriumPrice:coin.data.data[1027].quotes.EUR.price,
-                ripplePrice:coin.data.data[52].quotes.EUR.price,
-                cardanoPrice:coin.data.data[2010].quotes.EUR.price,
-                liteCoinePrice:coin.data.data[2].quotes.EUR.price}
+                etheriumPrice:this.getApi(coin,'EUR',1027),
+                ripplePrice:this.getApi(coin,'EUR',52),
+                cardanoPrice:this.getApi(coin,'EUR',2010),
+                litecoinePrice:this.getApi(coin,'EUR',2)}
           
         });
       })
+  axios.get(`https://api.coinmarketcap.com/v2/ticker/?convert=RUB`)
+    .then(res=>{
+      const rubapi = res
+      this.setState({
+        RUB: {
+          bitcoinPrice:this.getApi(rubapi,'RUB',1),
+          etheriumPrice:this.getApi(rubapi,'RUB',1027),
+          ripplePrice:this.getApi(rubapi,'RUB',52),
+          cardanoPrice:this.getApi(rubapi,'RUB',2010),
+          litecoinePrice:this.getApi(rubapi,'RUB',2),
+    }
+      })
+      
+    })
   }
 
  
@@ -65,12 +80,12 @@ criptoCurrencyCalc = (currency,cripta)=>{
     return this.state.USD[cripta]
   }
   if(currency === 'EURO'){
-    console.log('chek')
     return this.state.EURO[cripta]
 
   }
-  if(cripta === 'RUB'){
-    return 'grivnya'
+  if(currency === 'RUB'){
+    console.log('chek')
+    return this.state.RUB[cripta]
   }
 }
 getApi = (json,currency,currencyId)=>{
@@ -79,6 +94,9 @@ getApi = (json,currency,currencyId)=>{
   }
   if(currency==='EUR'){
     return json.data.data[`${currencyId}`].quotes.EUR.price
+  }
+  if(currency==='RUB'){
+    return json.data.data[`${currencyId}`].quotes.RUB.price
   }
 }
 convertClick = ()=>{
@@ -99,13 +117,13 @@ convertClick = ()=>{
               <option value="title" disable>Выберите валюту</option>
               <option value="USD">USD</option>
               <option value="EURO">EURO</option>
-              <option value="GRN">GRN</option>
+              <option value="RUB">RUB</option>
             </select>
             <span>Bitcoin{this.criptoCurrencyCalc(this.state.value,'bitcoinPrice')}</span>
             <span>Etherium{this.criptoCurrencyCalc(this.state.value,'etheriumPrice')}</span>
             <span>Ripple{this.criptoCurrencyCalc(this.state.value,'ripplePrice')}</span> 
             <span>Cardano{this.criptoCurrencyCalc(this.state.value,'cardanoPrice')}</span>
-            <span>LiteCoine{this.criptoCurrencyCalc(this.state.value,'liteCoinePrice')}</span>
+            <span>LiteCoine{this.criptoCurrencyCalc(this.state.value,'litecoinePrice')}</span>
             <div>
             <h1>Cryptocurrency Converter Calculator</h1>
             <input className = 'valueInput' ref={(input)=>this.valueInput = input}/><br/>
@@ -115,7 +133,7 @@ convertClick = ()=>{
               <option value="etheriumPrice">Etherium</option>
               <option value="ripplePrice">Ripple</option>
               <option value="cardanoPrice">Cardano</option>
-              <option value="liteCoinePrice">LiteCoine</option>
+              <option value="litecoinePrice">LiteCoine</option>
               </select>
               <br/>
               <button onClick={this.convertClick}>CONVERT</button>
@@ -124,6 +142,7 @@ convertClick = ()=>{
             <span ref={(span)=>this.span = span}></span>
             </div>
             <Chart />
+            <SelectArchive />
         </div>
         
         

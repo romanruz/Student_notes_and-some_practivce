@@ -1,41 +1,28 @@
 import React,{Component} from 'react';
 import {Line} from 'react-chartjs-2';
 import Websocket from 'react-websocket';
-let arr = [];
+
 class Chart extends Component {
+	arr = [];
+	time = [];
   state = {
     data: undefined
   };
 
+
   handleData(data) {
     let result = JSON.parse(data);
-    let dataToChart = [];
-    let encodedTimes = [];
-    
-    let encodedTime = new Date(result.timestampms).toLocaleTimeString();
-    while (encodedTimes.length < 20) {
-      encodedTimes.push(encodedTime);
-    }
-    encodedTimes.splice(0, 1);
-    encodedTimes.splice(19, 0, encodedTime);
-
-    Object.values(result.events).map(e => {
-      while (dataToChart.length < 20) {
-        dataToChart.push(e.price);
-      }
-      dataToChart.splice(0, 1);
-      dataToChart.splice(19, 0, e.price);
-      return true;
-    });
-    arr.push(result.events[0].price)
-		 if(arr.length>20){
-		 	arr.shift()
+    this.time.push(new Date(result.timestampms).toLocaleTimeString()) 
+  		if(this.time.length>20){
+		 	this.time.shift()
 		 }
-    console.log ('igor array:'+dataToChart)
-    console.log ('my array:'+arr)
+    this.arr.push(result.events[0].price)
+		 if(this.arr.length>20){
+		 	this.arr.shift()
+		 }
     this.setState({
       data: {
-        labels: encodedTimes,
+        labels: [...this.time],
         datasets: [
           {
             label: "BTC Real-time",
@@ -56,7 +43,7 @@ class Chart extends Component {
             pointHoverBorderWidth: 2,
             pointRadius: 1,
             pointHitRadius: 10,
-            data: arr
+            data: [...this.arr]
           }
         ]
       }
@@ -72,11 +59,11 @@ class Chart extends Component {
         />
         {this.state.data && (
           <Line
-            width={90}
-            height={30}
+            width={100}
+            height={20}
             data={this.state.data}
             options={{
-              position: "right",
+              position: "left",
               maintainAspectRatio: true
             }}
           />
