@@ -1,15 +1,7 @@
 import React,{Component} from 'react';
 import {Line} from 'react-chartjs-2';
 import Websocket from 'react-websocket';
-<<<<<<< HEAD
 
-=======
-// import { defaults } from "react-chartjs-2";
-
-// defaults.global.animation = true;
-let arr = [];
-let time = [];
->>>>>>> 7193aa8d7d849adbe8699bb1076bf1ddb88155d1
 class Chart extends Component {
 	arr = [];
 	time = [];
@@ -20,7 +12,6 @@ class Chart extends Component {
 
   handleData(data) {
     let result = JSON.parse(data);
-<<<<<<< HEAD
     this.time.push(new Date(result.timestampms).toLocaleTimeString()) 
   		if(this.time.length>20){
 		 	this.time.shift()
@@ -32,22 +23,6 @@ class Chart extends Component {
     this.setState({
       data: {
         labels: [...this.time],
-=======
-    time.push(new Date(result.timestampms).toLocaleTimeString())
-     if(time.length>20){
-		 	time.shift()
-		 }
-    arr.push(result.events[0].price)
-		 if(arr.length>20){
-		 	arr.shift()
-		 }
-    
-    console.log ('my array:'+arr)
-    console.log (time)
-    this.setState({
-      data: {
-        labels: time,
->>>>>>> 7193aa8d7d849adbe8699bb1076bf1ddb88155d1
         datasets: [
           {
             label: "BTC Real-time",
