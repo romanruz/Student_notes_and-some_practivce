@@ -8,10 +8,11 @@ class Select extends Component {
 constructor(props){
   super(props);
   this.state = {
-    value:'',  
+    value:'USD', 
+    USD:{bitcoinPrice:''} 
   };
 }
-componentDidMount() {
+componentWillMount() {
     axios.get(`https://api.coinmarketcap.com/v2/ticker/?convert=EUR`)
       .then(res => {
         const coin  = res;
@@ -48,6 +49,7 @@ onChangeHandler = (e)=>{
   this.setState({value:e.target.value});  
 }
 criptoCurrencyCalc = (currency,cripta)=>{
+
   if(currency === 'USD'){
     //тут буду выяснять курс и тип крипты
     return this.state.USD[cripta]
@@ -97,22 +99,33 @@ if (this.convertSelect.value === 'title'){
   render() {
     return (
         <div>
-            <select className={this.props.name} onChange={this.onChangeHandler}>
-              <option value="title" disable>Выберите валюту</option>
+        <div className='header'>
+            <h1>Cryptocurrency Converter Calculator</h1>
+         </div>
+        <div className='wrapper'>
+         <div className='selectWrap'>
+            <select className='selectValue' onChange={this.onChangeHandler}>
+              <option value="title" disable>Choose currency here</option>
               <option value="USD">USD</option>
               <option value="EURO">EURO</option>
               <option value="RUB">RUB</option>
             </select>
-            <span>Bitcoin{this.criptoCurrencyCalc(this.state.value,'bitcoinPrice')}</span>
-            <span>Etherium{this.criptoCurrencyCalc(this.state.value,'etheriumPrice')}</span>
-            <span>Ripple{this.criptoCurrencyCalc(this.state.value,'ripplePrice')}</span> 
-            <span>Cardano{this.criptoCurrencyCalc(this.state.value,'cardanoPrice')}</span>
-            <span>LiteCoine{this.criptoCurrencyCalc(this.state.value,'litecoinePrice')}</span>
-            <div>
-            <h1>Cryptocurrency Converter Calculator</h1>
-            <input className = 'valueInput' ref={(input)=>this.valueInput = input}/><br/>
-            <select ref={(select)=>this.convertSelect = select}>
-              <option value="title" disable>Выберите крипту</option>
+          </div>
+            <div className='span'>
+              <span>Bitcoin:{`${this.criptoCurrencyCalc(this.state.value,'bitcoinPrice')},`}</span>
+              <span>Etherium:{`${this.criptoCurrencyCalc(this.state.value,'etheriumPrice')},`}</span>
+              <span>Ripple:{`${this.criptoCurrencyCalc(this.state.value,'ripplePrice')},`}</span> 
+              <span>Cardano:{`${this.criptoCurrencyCalc(this.state.value,'cardanoPrice')},`}</span>
+              <span>LiteCoine:{`${this.criptoCurrencyCalc(this.state.value,'litecoinePrice')};`}</span>
+            </div>
+            <div className='calcWrapper'>
+              <div className='valueInputWrapper'>
+                <label for='valueInput'>How many you want to buy:</label><br/>
+                <span>(Choosen currensy is {this.state.value})</span><br/>
+                <input id='valueInput' className ='valueInput' ref={(input)=>this.valueInput = input} placeholder='Input quantity here'/><br/>
+              </div>
+            <select className='calcSelect' ref={(select)=>this.convertSelect = select}>
+              <option value="title" disable>Choose ctipta</option>
               <option value="bitcoinPrice">Bitcoin</option>
               <option value="etheriumPrice">Etherium</option>
               <option value="ripplePrice">Ripple</option>
@@ -120,12 +133,15 @@ if (this.convertSelect.value === 'title'){
               <option value="litecoinePrice">LiteCoine</option>
               </select>
               <br/>
-              <button onClick={this.convertClick}>CONVERT</button>
+              <button className = 'calcBtn' onClick={this.convertClick}>CONVERT</button>
               <br/>
             <span ref={(span)=>this.span = span}></span>
             </div>
-            <Chart />
+            <h3>Bitcoin History currency:</h3>
             <SelectArchive />
+            <h3>Bitcoin Online currency:</h3>
+            <Chart />
+          </div>
         </div>    
     );
   }

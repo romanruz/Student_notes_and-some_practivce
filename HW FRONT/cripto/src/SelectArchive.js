@@ -33,10 +33,10 @@ class SelectArchive extends Component {
 		return(
 			<div>
 			<select className='SelectArchive' onChange={this.onChangeHandler}>
-              <option value="title" disable>Выберите период</option>
-              <option value="day">День</option>
-              <option value="month">Месяц</option>
-              <option value="year">Год</option>
+              <option value="title" disable>Choose Period</option>
+              <option value="day">Days</option>
+              <option value="month">months</option>
+              <option value="year">years</option>
             </select>
             <Line
             width={100}
