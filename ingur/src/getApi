@@ -1,0 +1,17 @@
+import React, {Component} from 'react';
+import axios from 'axios';
+
+export const getApi ()=>{
+  console.log('2');
+  axios.get('https://api.imgur.com/3/gallery/top/top', {
+    headers: {
+      authorization: "Client-ID 8065ef18f4bf419"
+    }
+  }).then((response) => {
+    const result = response;
+    this.setState({data:result});
+    console.log(result);
+  }).catch((error) => {
+    console.log(error);
+  });
+}
