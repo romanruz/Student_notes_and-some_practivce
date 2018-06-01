@@ -6,7 +6,6 @@ import registerServiceWorker from './registerServiceWorker';
 import {Provider} from 'react-redux';
 import {createStore,applyMiddleware} from 'redux';
 import {fetch} from './reducer';
-import axios from 'axios';
 import {composeWithDevTools} from 'redux-devtools-extension';
 import thunk from 'redux-thunk';
 
