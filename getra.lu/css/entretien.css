@@ -1,0 +1,200 @@
+@font-face {
+  font-family: 'rawengulkregular';
+  src: url("../fonts/rawengulkregular-webfont.eot");
+  src: url("../fonts/rawengulkregular-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/rawengulkregular-webfont.woff") format("woff"), url("../fonts/rawengulkregular-webfont.ttf") format("truetype"), url("../fonts/rawengulkregular-webfont.svg#rawengulkregular") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'rawengulkdemibold';
+  src: url("../fonts/rawengulkdemibold-webfont.eot");
+  src: url("../fonts/rawengulkdemibold-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/rawengulkdemibold-webfont.woff") format("woff"), url("../fonts/rawengulkdemibold-webfont.ttf") format("truetype"), url("../fonts/rawengulkdemibold-webfont.svg#rawengulkdemibold") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'helveticaneuelight';
+  src: url("../fonts/helvetica-neue-lt-com-45-light.eot");
+  src: url("../fonts/helvetica-neue-lt-com-45-light.eot?#iefix") format("embedded-opentype"), url("../fonts/helvetica-neue-lt-com-45-light.woff") format("woff"), url("../fonts/helvetica-neue-lt-com-45-light.ttf") format("truetype"), url("../fonts/helvetica-neue-lt-com-45-light.svg#helveticaneuelight") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'rawengulkbold';
+  src: url("../fonts/rawengulkbold-webfont.eot");
+  src: url("../fonts/rawengulkbold-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/rawengulkbold-webfont.woff") format("woff"), url("../fonts/rawengulkbold-webfont.ttf") format("truetype"), url("../fonts/rawengulkbold-webfont.svg#rawengulkbold") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+.imgDeco {
+  height: 251px;
+  background-image: url("../images/FotoliaComp_55571650_oTvGb7XvNKLWAKbnvVRYa8rAXjWwV7RA.jpg"); }
+
+.whiteBoxlg , .whiteBoxmd {
+  background-color: white;
+}
+
+.imgBox {
+  min-height: 418px;
+}
+
+h5 {
+  color: #f47b20; }
+
+h3 {
+  color: #f47b20;
+  padding-left: 15px; }
+
+.content {
+  padding-top: 20px;
+  padding-left: 30px;
+  padding-right: 30px;
+  text-align:justify;
+}
+.notif{
+  max-width: 370px;
+  margin-left: 20px !important;
+  max-height: 120px;
+  background-color: #f6f6f6;
+}
+
+ul {
+  padding-left: 0px;
+}
+li{
+	padding:3px 0px;
+}
+
+.nav li {
+	padding:0px;
+}
+@media (max-width: 389px) {
+  .notif {
+    z-index: 2;
+    top:320px;
+  }
+  .orange-cube {
+    background-color: #f47b20;
+    position: relative;
+    z-index: 1;
+    top: 235px;
+    left: 11px;
+    height: 40px;
+    width: 60px;
+  }
+}
+
+@media (min-width: 390px) and (max-width: 402px) {
+  .orange-cube{
+    background-color: #f47b20;
+    position: relative;
+    z-index: 1;
+    top: 234px;
+    left: 11px;
+    height: 40px;
+    width: 60px;
+  }
+}
+
+@media (min-width: 403px) and (max-width: 479px) {
+  .lastBox {
+    height: 143px; }
+    .notif {
+    z-index: 2;
+    top:320px;
+  }
+  .orange-cube {
+    background-color: #f47b20;
+    position: relative;
+    z-index: 1;
+    top: 258px;
+    left: 11px;
+    height: 40px;
+    width: 60px;
+  } }
+
+@media (min-width: 480px) and (max-width: 767px) {
+  .whiteBox {
+    padding-top: 1px;
+    margin-left: 0px !important;
+    min-height: 0px !important; }
+
+  .whiteBoxlg {
+    min-height: 230px;}
+  .notif {
+    z-index: 2;
+    top:320px;
+  }
+  .orange-cube{
+    background-color: #f47b20;
+    position: relative;
+    z-index: 1;
+    top: 258px;
+    left: 11px;
+    height: 40px;
+    width: 60px;
+  } }
+
+@media (min-width: 768px) and (max-width: 992px) {
+  .whiteBox {
+    margin-left: 0px !important;
+    min-height: 0px !important; }
+  .whiteBoxlg {
+    min-height: 336px !important; }
+    .notif {
+    z-index: 2;
+    top:320px;
+  }
+  .orange-cube{
+    background-color: #f47b20;
+    position: relative;
+    z-index: 1;
+    top: 313px;
+    left: 13px;
+    height: 40px;
+    width: 60px;
+  } }
+
+@media (min-width: 992px) {
+  .whiteBox {
+    min-height: 399px !important; }
+  .whiteBoxlg, .whiteBoxmd {
+    min-height:418px;}
+    .notif {
+      z-index: 2;
+      top:320px;
+  }
+  .orange-cube{
+    background-color: #f47b20;
+    position: relative;
+    z-index: 1;
+    top: 313px;
+    left: 13px;
+    height: 40px;
+    width: 60px;
+  }
+  .box-or {
+    min-height: 424px;
+    } }
+
+@media (min-width: 1200px) {
+  .box-or {
+    min-height: 368px;
+  }
+   .whiteBox {
+    min-height: 343px !important; }
+  .notif {
+    top:320px;
+    z-index: 2;
+  }
+  .orange-cube{
+    background-color: #f47b20;
+    position: relative;
+    z-index: 1;
+    top: 313px;
+    left: 13px;
+    height: 40px;
+    width: 60px;
+  }
+}
+

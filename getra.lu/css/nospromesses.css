@@ -1,0 +1,215 @@
+@font-face {
+  font-family: 'rawengulkregular';
+  src: url("../fonts/rawengulkregular-webfont.eot");
+  src: url("../fonts/rawengulkregular-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/rawengulkregular-webfont.woff") format("woff"), url("../fonts/rawengulkregular-webfont.ttf") format("truetype"), url("../fonts/rawengulkregular-webfont.svg#rawengulkregular") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'rawengulkdemibold';
+  src: url("../fonts/rawengulkdemibold-webfont.eot");
+  src: url("../fonts/rawengulkdemibold-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/rawengulkdemibold-webfont.woff") format("woff"), url("../fonts/rawengulkdemibold-webfont.ttf") format("truetype"), url("../fonts/rawengulkdemibold-webfont.svg#rawengulkdemibold") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'helveticaneuelight';
+  src: url("../fonts/helvetica-neue-lt-com-45-light.eot");
+  src: url("../fonts/helvetica-neue-lt-com-45-light.eot?#iefix") format("embedded-opentype"), url("../fonts/helvetica-neue-lt-com-45-light.woff") format("woff"), url("../fonts/helvetica-neue-lt-com-45-light.ttf") format("truetype"), url("../fonts/helvetica-neue-lt-com-45-light.svg#helveticaneuelight") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'rawengulkbold';
+  src: url("../fonts/rawengulkbold-webfont.eot");
+  src: url("../fonts/rawengulkbold-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/rawengulkbold-webfont.woff") format("woff"), url("../fonts/rawengulkbold-webfont.ttf") format("truetype"), url("../fonts/rawengulkbold-webfont.svg#rawengulkbold") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+.imgDeco {
+  height: 251px;
+  background-image: url("../images/FotoliaComp_55571650_oTvGb7XvNKLWAKbnvVRYa8rAXjWwV7RA.jpg"); }
+
+.WhiteBoxSM {
+  background-color: white;
+  margin-left: 0px !important;
+  padding: 14px 20px;
+  position: relative;
+} 
+
+@media (max-width: 767px) {
+  .whiteBox {
+    margin-left: 0px !important;
+    min-height: 0px !important; }
+  .WhiteBoxSM {
+    min-height: 150px;
+  }
+  .content {
+    margin-top: 20px;
+  }
+  .whiteBox {
+    height: auto; } }
+@media (min-width: 768px) {
+  .whiteBox {
+    margin-left: 0px !important;
+    min-height: 0px !important; } }
+@media (min-width: 992px) {
+  .whiteBox {
+    min-height: 512px !important; }
+  .lastBox {
+    height: 172px; }
+  .WhiteBoxSM {
+    min-height: 219px;
+    }
+  .content_adjust {
+    margin-top: 170px;
+  }
+  .content {
+  margin-bottom: 20px;
+  margin-top: 50px;
+   } }
+
+.notif {
+  text-align: left;
+  padding-left: 10px;
+  margin-left: 20px !important;
+  min-height: 25px;
+  line-height: 25px;
+  background-color: rgba(230, 230, 230, 0.9);
+}
+
+@media (max-width: 480px){
+  .notif-bottom{
+    padding-top: 220px;
+    z-index: 2;
+    width: 95%;
+  }
+  .orange-cube{
+    background-color: #f47b20;
+    position: relative;
+    z-index: 1;
+    top: -30px;
+    left: 14px;
+    height: 20px;
+    width: 40px;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 767px) {
+  .notif-bottom{
+    padding-top: 295px;
+    z-index: 2;
+    width: 95%;
+  }
+  .orange-cube{
+    background-color: #f47b20;
+    position: relative;
+    z-index: 1;
+    top: -30px;
+    left: 14px;
+    height: 20px;
+    width: 40px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 992px) {
+  .notif-bottom{
+    padding-top: 280px;
+    z-index: 2;
+    width: 95%;
+  }
+  .orange-cube{
+    background-color: #f47b20;
+    position: relative;
+    z-index: 1;
+    top: 274px;
+    left: 14px;
+    height: 20px;
+    width: 40px;
+  }
+}
+
+@media (min-width: 992px) {
+  .notif-bottom {
+    padding-top: 214px;
+    z-index: 2;
+    width: 95%;
+  }
+  .orange-cube{
+    background-color: #f47b20;
+    position: relative;
+    z-index: 1;
+    top: 208px;
+    left: 14px;
+    height: 25px;
+    width: 50px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .lastBox {
+    height: 219px; }
+  .WhiteBoxSM {
+    min-height: 219px;
+    }
+  .notif-bottom {
+    padding-top: 225px;
+    z-index: 2;
+    width: 95%;
+  }
+  .orange-cube{
+    background-color: #f47b20;
+    position: relative;
+    z-index: 1;
+    top: 219px;
+    left: 14px;
+    height: 22px;
+    width: 35px;
+  } }
+
+  .portfolio button {
+    padding: 0;
+    background-color: white;
+    border: none;
+  }
+  .portfolio img {
+    width: 100%;
+    height: 256px;
+    background-position: center;
+    background-size: cover;
+  }
+  .modalTxt {
+    color: #333333;
+    clear: both;
+  }
+  .modalTxt p {
+    margin-left: 20px;
+    margin-bottom: 10px;
+  }
+  .modalTxt ul {
+    margin-left: 10px;
+    margin-bottom: 20px;
+  }
+  .modalTxt h2 {
+    color: #f47b20;
+    padding: 15px;
+  }
+
+  .modalTxt i {
+    color: #f47b20;
+  }
+  
+  .gallery {
+	cursor:pointer;
+	position:relative;
+	text-align:center;
+  }
+  
+  .galleryTitle {
+	position:absolute;
+	background-color:grey;
+	padding:6px 10px;
+	bottom: 5px;
+	right: 0px;
+	color:white;
+  }

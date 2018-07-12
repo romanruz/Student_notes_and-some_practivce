@@ -1,0 +1,215 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="description" content="Rénovation, Électricité. Notre philosophie : la proximité et la relation de confiance avec chacun de nos clients">
+    <link rel="stylesheet" href="css/jquery-ui.css" />
+    <!-- <link rel="stylesheet" href="css/bootstrap.css" /> -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link href="css/index.css" rel="stylesheet" type="text/css" />
+    <link href="css/main.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Getra</title>
+</head>
+
+<body>
+	 <div id="preloader" class="preloader-2">
+        <div class="loader"><br/><span id="perc"></span></div>
+    </div>
+    <!-- <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content" style="width:300px;margin:0px auto;">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title" id="myModalLabel">Espace Client</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div><label>Username</label><br/><input type="text" placeholder="Username" value="" style="width:100%;" /></div>
+                        <div><label>Password</label><br/><input type="password" placeholder="password" value="" style="width:100%;" /></div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                        <button type="button" class="btn btn-primary">Login</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+ -->
+    <div class="container">
+        <div class="header row" style="position:relative;">
+            <div class="logocontainer col-sm-5">
+                <a class="logo" href="index.html"><img src="images/logo2.png" alt=""></a>
+                <br/>
+                <div class="col-sm-12 slogan">Rénovation Electricité</div>
+            </div>
+            <div class=" headerInfoBox">
+                <a href="callto:27990010" class="telGroup hidden-xs "><i class="fa fa fa-phone"></i>27990010</a>
+                <a href="tel:27990010" class="telGroup visible-xs "> <i class="fa fa fa-phone"></i> 27990010</a>
+                <a href="mailto:info@getra.lu" class="mailGroup "><i class="fa fa-envelope"></i>info@getra.lu</a>
+            </div>
+            <a href="#" class="espaceClient hidden-xs" data-toggle="modal" data-target="#myModal"><img src="images/account.png" alt="Espace Client"><span>Espace Client</span></a>
+        </div>
+        <div class="row" style="font-family:rawengulkdemibold,Helvetica!important;font-size:16px;">
+            <div class="col-md-12 col-sm-12 nav navbar-default">
+                <ul class="col-md-12 col-sm-12 nav navbar-nav">
+                    <!-- <li class="col-md-20p col-sm-12 col-xs-12"><a href="index.html">Accueil</a></li> -->
+                    <li class="toggle-cat-list col-md-3 hidden-sm hidden-xs"><a href="nosservices.html"> <i class="fa fa-arrow-circle-down"></i> Nos services</a>
+                        <ul class="hidemenu hidden-sm hidden-xs">
+                            <li class="dp-menu boxClickable" data-url="renovation.html" style="border-top: 1px solid #f47b20;"><a href="renovation.html">Rénovation</a></li>
+                            <li class="dp-menu boxClickable" data-url="construction.html"><a href="construction.html">Construction</a></li>
+                            <li class="dp-menu boxClickable" data-url="electricite.html"><a href="electricite.html">Electricité</a></li>
+                            <li class="dp-menu boxClickable" data-url="menuiserie.html"><a href="menuiserie.html">Menuiserie</a></li>
+                        </ul>
+                    </li>
+                    <div class=" btn-group dropdown-toggle hidden-lg hidden-md col-sm-12 col-xs-12" style="border:1px solid white;">
+                        <a href="nosservices.html">
+                            <!-- <button type="button" class="navMinStyled btn pull-right hidden-md col-sm-10 col-xs-10">Nos services</button> -->
+                        </a>
+                        <div class="navMinStyled btn-pos btn dropdown-toggle hidden-md col-sm-12 col-xs-12" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="display: block;border-right: 1px solid white !important;">
+                            <span class="caret"></span>
+                            <span class="sr-only">Toggle Dropdown</span>Nos services
+                        </div>
+                        <ul class="dropdown-menu">
+                            <li><a href="renovation.html">Rénovation</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="construction.html">Constuction</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="electricite.html">Electricité</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="entretien.html">Entretien</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="jardinage.html">Jardinage</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="menuiserie.html">Menuiserie</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="hiver.html">Service hivernal</a></li>
+                        </ul>
+                    </div>
+                    <li class="col-md-3 col-sm-12 col-xs-12"><a href="nosequipes.html">Nos équipes</a></li>
+                    <li class="col-md-3 col-sm-12 col-xs-12"><a href="nospromesses.html">Réalisations récentes</a></li>
+                    <li class="col-md-3 col-sm-12 col-xs-12"><a href="contact.html">Contact</a></li>
+                    <li class="visible-xs espaceClient1">
+                        <a href="#" data-toggle="modal" data-target="#myModal">
+                            <div>Espace Client</div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-md-12 col-sm-12" style="height:3px;background-color:#f47b20"></div>
+        <div class="row">
+            <div class="col-sm-12 col-md-8 hidden-xs" style="float:right">
+                <div class="imgBox sliderLeft">
+                    <div id="carousel" class="carousel slide" data-ride="carousel">
+                        <!-- Indicators -->
+                        <ol class="carousel-indicators hidden-xs hidden-sm">
+                            <li data-target="#carousel" data-slide-to="0" class="active"></li>
+                            <li data-target="#carousel" data-slide-to="1"></li>
+                            <li data-target="#carousel" data-slide-to="2"></li>
+                        </ol>
+                        <!-- Wrapper for slides -->
+                        <div class="carousel-inner">
+                            <div class="item active">
+                                <a href="nosequipes.html"><img class="img-responsive center-block" src="images/services_pic1.png" alt="Accueil" width="100%"></a>
+                            </div>
+                            <div class="item ">
+                                <a href="nosequipes.html"><img class="img-responsive center-block" src="images/equipe_pic1.png" alt="Accueil" width="100%"></a>
+                            </div>
+                            <div class="item">
+                                <a href="nospromesses.html"><img class="img-responsive center-block" src="images/promesses_pic1.png" alt="Accueil" width="100%"></a>
+                            </div>
+                        </div>
+                        <!-- Controls -->
+                        <a class="left carousel-control" href="#carousel" data-slide="prev">
+                                <span class="glyphicon glyphicon-chevron-left"></span>
+                            </a>
+                        <a class="right carousel-control " href="#carousel" data-slide="next">
+                                <span class="glyphicon glyphicon-chevron-right"></span>
+                            </a>
+                    </div>
+                </div>
+            </div>
+            <div class="hidden-lg hidden-md col-sm-4 hidden-xs" style="height:5px;background-color:#06559D;"></div>
+            <div class="hidden-lg hidden-md col-sm-4 hidden-xs" style="height:5px;background-color:#f47d20;"></div>
+            <div class="hidden-lg hidden-md col-sm-4 hidden-xs" style="height:5px;background-color:#06559D;"></div>
+            <div class="clearfix visible-sm"></div>
+            <div class="col-md-4 col-sm-12">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12">
+                        <div class="leftBar block imgBox boxClickable adjust col-md-12 col-sm-12" data-url="renovation.html" style="background-image:url('images/equipe2.jpg')">
+                            <div class="notif-bottom col-md-6 col-sm-12 col-xs-12">
+                                <div class="notif">
+                                    <h3>Rénovation</h3>
+                                    <a href="renovation.html" class="more">en savoir plus...</a>
+                                </div>
+                            </div>
+                            <div class="orange-cube"></div>
+                        </div>
+                        <!--<div class="col-md-12 col-sm-12" style="height:5px;background-color:#06559D;"></div>-->
+                    </div>
+                </div>
+                <div class="clearfix hidden-xs hidden-sm "></div>
+                <div class="row">
+                    <div class="col-md-12 col-sm-12">
+                        <div class="leftBar block imgBox boxClickable adjust col-md-12 col-sm-12" data-url="electricite.html" style=";background-image:url('Picture WebSite GETRA/ThinkstockPhotos-155471420.jpg')">
+                            <div class="notif-bottom col-md-6 col-sm-12 col-xs-12">
+                                <div class="notif">
+                                    <h3>electricité</h3>
+                                    <a href="electricite.html" class="more">en savoir plus...</a>
+                                </div>
+                            </div>
+                            <div class="orange-cube"></div>
+                        </div>
+                        <!--<div class="col-md-12 col-sm-12" style="height:5px;background-color:#06559D"></div>-->
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12 col-sm-12">
+                        <div class="leftBar block imgBox boxClickable adjust col-md-12 col-sm-12" data-url="construction.html" style=";background-image:url('images/realisations/CON_01.JPG')">
+                            <div class="notif-bottom col-md-6 col-sm-12 col-xs-12">
+                                <div class="notif">
+                                    <h3>Construction</h3>
+                                    <a href="construction.html" class="more">en savoir plus...</a>
+                                </div>
+                            </div>
+                            <div class="orange-cube"></div>
+                        </div>
+                        <!--<div class="col-md-12 col-sm-12" style="height:5px;background-color:#f47b20"></div>-->
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="leftBar block imgBox boxClickable adjust col-md-12 col-sm-12" data-url="menuiserie.html" style="background-image:url('images/realisations/M_09.jpg')">
+                        <div class="notif-bottom col-md-6 col-sm-12 col-xs-12">
+                            <div class="notif">
+                                <h3>Menuiserie</h3>
+                                <a href="menuiserie.html" class="more">en savoir plus...</a>
+                            </div>
+                        </div>
+                        <div class="orange-cube"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-12 col-sm-12" style="height:3px;background-color:#f47b20"></div>
+        <div class="copyright">Copyright 2014 Getra </div>
+        <div class="prestige"><a href="http://www.getra.lu/prestige/">vers Getra Prestige</a></div>
+    </div>
+    <!--[if lt IE 9]>
+            <link href="/css/ie8.css" rel="stylesheet">
+        <![endif]-->
+    <script src="js/preloader.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <!--[if lt IE 9]>
+            <script src="js/html5shiv.js"></script>
+            <script src="js/respond.js"></script>
+        <![endif]-->
+    <script src="js/main.js"></script>
+    <!-- <script src="js/analytics.js"></script> -->
+</body>
+
+</html>

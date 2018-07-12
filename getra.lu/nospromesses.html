@@ -1,0 +1,416 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, user-scalable=no">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <link rel="stylesheet" href="css/jquery-ui.css" />
+        <link rel="stylesheet" href="css/bootstrap.css" />
+        <link rel="stylesheet" href="css/lightbox.css" />
+        <link href="css/main.css" rel="stylesheet" type="text/css" />
+        <link href="css/nospromesses.css" rel="stylesheet" type="text/css" />
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+        <title>Getra - Nos promesses</title>
+		<style>
+		
+		</style>
+    </head>
+    <body>
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content" style="width:300px;margin:0px auto;">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title" id="myModalLabel">Espace Client</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div><label>Username</label><br/><input type="text" placeholder="Username" value="" style="width:100%;" /></div>
+                        <div><label>Password</label><br/><input type="password" placeholder="password" value="" style="width:100%;" /></div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                        <button type="button" class="btn btn-primary">Login</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row" style="position:relative;">
+                <div class="logocontainer col-sm-5" >
+                    <a class="logo" href="index.html"><img src="images/logo2.png" alt=""></a><br/>   
+                    <div class="col-sm-12 slogan" >Rénovation Electricité</div>
+                </div>
+                <div class="pull-right headerInfoBox">
+                    <a href="callto:27990010" class="telGroup hidden-xs pull-right"><img src="images/icon_phone1.png" alt="">27990010</a>
+                    <a href="tel:27990010" class="telGroup visible-xs pull-right"><img src="images/icon_phone1.png" alt="">27990010</a>
+                    <a href="mailto:info@getra.lu" class="mailGroup pull-left"><img src="images/icon_mail1.png" alt="">info@getra.lu</a>
+                </div>
+                    
+                <a href="#" class="espaceClient hidden-xs" data-toggle="modal" data-target="#myModal"><img src="images/account.png" alt="Espace Client"><span>Espace Client</span></a>
+            </div>
+            <div class="row" style="font-family:rawengulkdemibold,Helvetica!important;font-size:16px;">
+                <div class="col-md-12 col-sm-12 nav navbar-default">
+                    <ul class="col-md-12 col-sm-12 nav navbar-nav" >
+                        <li class="col-md-20p col-sm-12 col-xs-12"><a href="index.html">Accueil</a></li>
+                            
+                            
+                        <li class="toggle-cat-list col-md-20p hidden-sm hidden-xs"><a href="nosservices.html">Nos services</a>
+                            <ul class="hidemenu hidden-sm hidden-xs">
+                                <li class="dp-menu boxClickable" data-url="renovation.html" style="border-top: 1px solid #f47b20;"><a href="renovation.html">Rénovation</a></li>
+                                <li class="dp-menu boxClickable" data-url="construction.html"><a href="construction.html">Construction</a></li>
+								<li class="dp-menu boxClickable" data-url="electricite.html"><a href="electricite.html">Electricité</a></li>
+                                <li class="dp-menu boxClickable" data-url="entretien.html"><a href="entretien.html">Entretien</a></li>
+                                <li class="dp-menu boxClickable" data-url="jardinage.html"><a href="jardinage.html">Jardinage</a></li>
+                                <li class="dp-menu boxClickable" data-url="menuiserie.html"><a href="menuiserie.html">Menuiserie</a></li>
+                                <li class="dp-menu boxClickable" data-url="hiver.html"><a href="hiver.html">Service hivernal</a></li>
+                            </ul>
+                        </li>
+                        <div class="btn-group hidden-lg hidden-md col-sm-12 col-xs-12" style="border:1px solid white;">
+                            <a href="nosservices.html"><button type="button" class="btn hidden-md col-sm-12 col-xs-12">Nos services</button></a>
+                            <button type="button" class="btn-pos btn dropdown-toggle hidden-md col-sm-2 col-xs-2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="display: block;border-right: 1px solid white !important;">
+                                <span class="caret"></span>
+                                <span class="sr-only">Toggle Dropdown</span>
+                            </button>
+                             <ul class="dropdown-menu">
+                                <li><a href="renovation.html">Rénovation</a></li>
+								<li role="separator" class="divider"></li>
+                                <li><a href="construction.html">Constuction</a></li>
+                                <li role="separator" class="divider"></li>
+                                <li><a href="electricite.html">Electricité</a></li>
+                                <li role="separator" class="divider"></li>
+                                <li><a href="entretien.html">Entretien</a></li>
+                                <li role="separator" class="divider"></li>
+                                <li><a href="jardinage.html">Jardinage</a></li>
+                                <li role="separator" class="divider"></li>
+								<li><a href="menuiserie.html">Menuiserie</a></li>
+                                <li role="separator" class="divider"></li>
+                                <li><a href="hiver.html">Service hivernal</a></li>
+                            </ul>
+                        </div>
+                            
+                        <li class="col-md-20p col-sm-12 col-xs-12"><a href="nosequipes.html">Nos Equipes</a></li>
+                        <li class="active col-md-20p col-sm-12 col-xs-12"><a href="nospromesses.html" >Réalisations récentes</a></li>												 
+                        <li class="col-md-20p col-sm-12 col-xs-12"><a href="contact.html">Contact</a></li>
+                        <li class="visible-xs espaceClient1"><a href="#" data-toggle="modal" data-target="#myModal"><div>Espace Client</div></a></li>
+                    </ul>
+                </div> 
+            </div>
+            <div class="col-md-12 col-sm-12" style="height:4px;background-color:#f47b20"></div>
+            <div class="row">
+                <div class="col-md-3 col-sm-12">
+                    <div class="block whiteBox mLeft mBottom col-md-12 col-sm-12" >
+                        <div class="content_adjust col-md-12 col-sm-12">
+                            <div class="picto"><img src="images/picto.png" style="height:39px"></div>
+                            <div class="mainTitle"><h2>réalisations<br/>récentes</h2></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio col-md-9 col-sm-12">
+                    
+                       <div id="popup-gallery-RE" class="col-md-4 col-sm-12 col-xs-12 gallery">
+					   <div class="imgBox block adjust col-md-4 col-sm-12" style="width:100%;height:256px;background-image:url('images/realisations/RE_03.jpg')"></div>
+					   <div class="galleryTitle"><b>Rénovation extérieure</b> (9 photos)</div>
+					   </div>
+					  
+					   
+					   <div id="popup-gallery-RI" class="col-md-4 col-sm-12 col-xs-12 gallery">
+					   <div class="imgBox block adjust col-md-4 col-sm-12" style="width:100%;height:256px;background-image:url('images/realisations/RI_03.jpg')"></div>
+					   <div class="galleryTitle"><b>Rénovation intérieure</b> (3 photos)</div>
+					   </div>
+					   
+					   
+					   <div id="popup-gallery-VP" class="col-md-4 col-sm-12 col-xs-12 gallery">
+					   <div class="imgBox block adjust col-md-4 col-sm-12" style="width:100%;height:256px;background-image:url('images/realisations/VP_02.JPG')"></div>
+					   <div class="galleryTitle"><b>Voirie et Pavage</b> (4 photos)</div>
+					   </div>
+					    
+					   
+					   <div id="popup-gallery-J" class="col-md-4 col-sm-12 col-xs-12 gallery">
+					   <div class="imgBox block adjust col-md-4 col-sm-12" style="width:100%;height:256px;background-image:url('images/realisations/J_04.jpg')"></div>
+					   <div class="galleryTitle"><b>Jardinage</b> (7 photos)</div>
+					   </div>
+					   
+					   
+					   <div id="popup-gallery-M" class="col-md-4 col-sm-12 col-xs-12 gallery">
+					   <div class="imgBox block adjust col-md-4 col-sm-12" style="width:100%;height:256px;background-image:url('images/realisations/M_04.jpg')"></div>
+					   <div class="galleryTitle"><b>Menuiserie</b> (7 photos)</div>
+					   </div>
+					   
+					   
+					   <div id="popup-gallery-C" class="col-md-4 col-sm-12 col-xs-12 gallery">
+					   <div class="imgBox block adjust col-md-4 col-sm-12" style="width:100%;height:256px;background-image:url('images/realisations/C_02.JPG')"></div>
+					   <div class="galleryTitle"><b>Créativité</b> (2 photos)</div>
+					   </div>
+					    
+					   
+					   
+                </div>
+            </div>
+            <div class="block col-md-4 col-sm-12" style="height:5px;background-color:#f47b20"></div>
+            <div class="block col-md-4 col-sm-12" style="height:5px;background-color:#f47b20"></div>
+            <div class="block col-md-4 hidden-sm hidden-xs" style="height:5px;background-color:#f47b20"></div>
+            <div class="row">
+                <div class="block WhiteBoxSM col-md-4 col-sm-12 col-xs-12" style="float:right">
+                    <div class="content col-md-12 col-sm-12">
+                        <div class="picto"><img src="images/picto.png" style="height:39px"></div>
+                        <div class="mainTitle"><h2>témoignages</h2></div>
+                    </div>
+                </div>
+                <div class="block WhiteBoxSM col-md-4 col-sm-12 col-xs-12">
+                    <div class="content col-md-12 col-sm-12">
+                        <p><b>"</b><i>Pour refaire mon appartement, j'avais besoin de l'aide de professionnels.
+                                Au final, les délais et le budget ont été respectés.</i><b>"</b></p><br>
+                        <div style="float:right"><b>Daniel</b></div>
+                    </div>
+                </div>
+                <div class="block WhiteBoxSM col-md-4 col-sm-12 col-xs-12">
+                    <div class="content col-md-12 col-sm-12">
+                        <p><b>"</b><i>Je souhaitais rénover ma salle de bains, et j'ai fait appel à Getra. Ce qui a fait la différence, c'est leur professionnalisme et leur réactivité en toutes circonstances.</i><b>"</b></p><br>
+                        <div style="float:right"><b>Mike</b></div>
+                    </div>
+                </div>
+            </div>       
+            <div class="copyright">Copyright 2014 Getra </div>
+            <div class="prestige"><a href="http://www.getra.lu/prestige/">vers Getra Prestige</a></div>
+        </div>
+        <br/>
+        <!--[if lt IE 9]>
+            <link href="/css/ie8.css" rel="stylesheet">
+        <![endif]-->
+        <script src="js/jquery.min.js"></script>
+        <script src="js/jquery-ui.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <!--[if lt IE 9]>
+            <script src="js/html5shiv.js"></script>
+            <script src="js/respond.js"></script>
+        <![endif]-->    
+        <script src="js/analytics.js"></script>
+        <script src="js/main.js"></script>
+        <script src="js/jquery.magnific-popup.min.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function() {
+			
+					$('#popup-gallery-RE').magnificPopup({
+					
+						type: 'image',
+						tLoading: 'Loading image #%curr%...',
+						mainClass: 'mfp-img-mobile',
+						gallery: {
+							enabled: true,
+							navigateByImgClick: true,
+							preload: [0,1] // Will preload 0 - before current, and 1 after the current image
+						},
+						 items: [
+							  {
+								src: 'images/realisations/RE_01.jpg',
+								title: 'Allée en Pavés'
+							  },
+							  {
+								src: 'images/realisations/RE_02.jpg',
+								title: 'Allée en Pavés'
+							  },
+							   {
+								src: 'images/realisations/RE_03.jpg',
+								title: 'Allée en Pavés'
+							  },
+							   {
+								src: 'images/realisations/RE_04.jpg',
+								title: 'Allée en Pavés'
+							  },
+							   {
+								src: 'images/realisations/RE_05.JPG',
+								title: 'Façade'
+							  },
+							   {
+								src: 'images/realisations/RE_06.jpg',
+								title: 'Four à Pizza - dos'
+							  },
+							   {
+								src: 'images/realisations/RE_07.jpg',
+								title: 'Four à Pizza - face'
+							  },
+							   {
+								src: 'images/realisations/RE_08.JPG',
+								title: 'Mur de soutènement'
+							  },
+							  {
+								src: 'images/realisations/RE_09.JPG',
+								title: 'Terrasse et engazonnement'
+							  }
+						]
+						
+					});
+					
+					
+					$('#popup-gallery-RI').magnificPopup({
+					
+						type: 'image',
+						tLoading: 'Loading image #%curr%...',
+						mainClass: 'mfp-img-mobile',
+						gallery: {
+							enabled: true,
+							navigateByImgClick: true,
+							preload: [0,1] // Will preload 0 - before current, and 1 after the current image
+						},
+						 items: [
+							  {
+								src: 'images/realisations/RI_03.jpg',
+								title: 'Rénovation restaurant l\'Avenue Luxembourg Kirchberg'
+							  },
+							  {
+								src: 'images/realisations/RI_01.JPG',
+								title: 'Rénovation cuisine'
+							  },
+							  {
+								src: 'images/realisations/RI_02.jpg',
+								title: 'Rénovation restaurant Café des Capucins Luxembourg Ville'
+							  }
+						]
+						
+					});
+					
+					$('#popup-gallery-VP').magnificPopup({
+					
+						type: 'image',
+						tLoading: 'Loading image #%curr%...',
+						mainClass: 'mfp-img-mobile',
+						gallery: {
+							enabled: true,
+							navigateByImgClick: true,
+							preload: [0,1] // Will preload 0 - before current, and 1 after the current image
+						},
+						 items: [
+							  {
+								src: 'images/realisations/VP_01.JPG',
+								title: 'Armoire de rue'
+							  },
+							  {
+								src: 'images/realisations/VP_02.JPG',
+								title: 'Armoire de rue'
+							  },
+							  {
+								src: 'images/realisations/VP_03.JPG',
+								title: 'Armoire de rue et pavage'
+							  },
+							  {
+								src: 'images/realisations/VP_04.JPG',
+								title: 'Enrobé'
+							  }
+						]
+						
+					});
+					
+						$('#popup-gallery-J').magnificPopup({
+					
+						type: 'image',
+						tLoading: 'Loading image #%curr%...',
+						mainClass: 'mfp-img-mobile',
+						gallery: {
+							enabled: true,
+							navigateByImgClick: true,
+							preload: [0,1] // Will preload 0 - before current, and 1 after the current image
+						},
+						 items: [
+							  {
+								src: 'images/realisations/J_01.JPG',
+								title: 'Bordures'
+							  },
+							  {
+								src: 'images/realisations/J_02.jpg',
+								title: 'Engazonnement'
+							  },
+							  {
+								src: 'images/realisations/J_03.jpg',
+								title: 'Engazonnement'
+							  },
+							   {
+								src: 'images/realisations/J_04.jpg',
+								title: 'Engazonnement et plantations'
+							  },
+							   {
+								src: 'images/realisations/J_05.JPG',
+								title: 'Engazonnement et plantations'
+							  },
+							   {
+								src: 'images/realisations/J_06.JPG',
+								title: 'Engazonnement'
+							  },
+							  {
+								src: 'images/realisations/J_07.JPG',
+								title: 'Plantations'
+							  }
+						]
+						
+					});
+					
+						$('#popup-gallery-M').magnificPopup({
+					
+						type: 'image',
+						tLoading: 'Loading image #%curr%...',
+						mainClass: 'mfp-img-mobile',
+						gallery: {
+							enabled: true,
+							navigateByImgClick: true,
+							preload: [0,1] // Will preload 0 - before current, and 1 after the current image
+						},
+						 items: [
+							  {
+								src: 'images/realisations/M_04.jpg',
+								title: 'Lambris mural'
+							  },
+							  {
+								src: 'images/realisations/M_05.jpg',
+								title: 'Bibliothèque encastrée'
+							  },	
+{
+								src: 'images/realisations/M_03.jpg',
+								title: 'Table de chevet'
+							  },	
+{
+								src: 'images/realisations/M_06.jpg',
+								title: 'Meuble salle de bain'
+							  },	
+{
+								src: 'images/realisations/M_07.jpg',
+								title: 'Table à manger'
+							  },	
+{
+								src: 'images/realisations/M_08.jpg',
+								title: 'Étagère encastrée'
+							  },								  
+												 
+							  {
+								src: 'images/realisations/M_09.jpg',
+								title: 'Parquet en chevrons'
+							  }
+						]
+						
+					});
+					
+						$('#popup-gallery-C').magnificPopup({
+					
+						type: 'image',
+						tLoading: 'Loading image #%curr%...',
+						mainClass: 'mfp-img-mobile',
+						gallery: {
+							enabled: true,
+							navigateByImgClick: true,
+							preload: [0,1] // Will preload 0 - before current, and 1 after the current image
+						},
+						 items: [
+							  {
+								src: 'images/realisations/C_01.JPG',
+								title: 'Bacs à fleurs en ferraille'
+							  },							 
+							  {
+								src: 'images/realisations/C_02.JPG',
+								title: 'Bacs à fleurs en ferraille'
+							  }
+						]
+						
+					});
+				
+            });
+        </script>
+    </body>
+</html>
