@@ -1,0 +1,147 @@
+    body {
+        /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#53cbf1+68,05abe0+100 */
+        background: rgb(83, 203, 241);
+        /* Old browsers */
+        background: -moz-linear-gradient(top, rgba(83, 203, 241, 1) 68%, rgba(5, 171, 224, 1) 100%);
+        /* FF3.6-15 */
+        background: -webkit-linear-gradient(top, rgba(83, 203, 241, 1) 68%, rgba(5, 171, 224, 1) 100%);
+        /* Chrome10-25,Safari5.1-6 */
+        background: linear-gradient(to bottom, rgba(83, 203, 241, 1) 68%, rgba(5, 171, 224, 1) 100%);
+        /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#53cbf1', endColorstr='#05abe0', GradientType=0);
+        /* IE6-9 */
+    }
+
+    .wrapper {
+
+        display: grid;
+        grid-template-columns: 5% 1fr 5%;
+        grid-template-rows: 20% 1fr 20%;
+        grid-template-areas: "header header header" ". content ." "footer footer footer";
+    }
+
+    .logo {
+        padding-left: 2%;
+        font: 140pt Righteous;
+    }
+
+    .headerContact {
+        display: flex;
+        align-items: flex-end;
+        font: 25pt Righteous;
+        padding-right: 5px;
+        margin-left: auto;
+    }
+
+    .header {
+        display: grid;
+        grid-template-columns: 50% 1fr;
+        color: white;
+        grid-area: header;
+    }
+
+    h1 {
+        font: 60pt Righteous;
+        color: white;
+        text-align: center;
+    }
+
+    hr {
+        background-color: white;
+        height: 2px;
+        border: none;
+        width: 90%;
+        color: white;
+        grid-column: 1/3;
+    }
+
+    .picWrapper {
+        flex-wrap: wrap;
+        width: 100%;
+        flex-direction: row;
+        justify-content: space-around;
+        display: flex;
+    }
+
+    .content {
+        grid-area: content;
+    }
+
+    .picWrapper>a {
+        margin: 1%;
+        position: relative;
+        border-radius: 50%;
+        width: 300px;
+        height: 300px;
+        -webkit-box-shadow: 10px 10px 29px 1px rgba(0, 0, 0, 0.75);
+        -moz-box-shadow: 10px 10px 29px 1px rgba(0, 0, 0, 0.75);
+        box-shadow: 10px 10px 29px 1px rgba(0, 0, 0, 0.75);
+    }
+
+    .renovation {
+        background-size: cover;
+        background-image: url(../images/equipe2.jpg);
+    }
+
+    .construction {
+        background-size: cover;
+        background-image: url('../images/realisations/CON_01.JPG');
+    }
+
+    .electricite {
+        background-size: cover;
+        background-image: url('../images/ThinkstockPhotos-155471420.jpg');
+    }
+
+    .menuiserie {
+        background-size: cover;
+        background-image: url('../images/realisations/M_09.jpg');
+    }
+
+    .innerPic {
+        position: absolute;
+        font: 26pt Righteous;
+        left: 24px;
+        top: 172px;
+        color: #FFF;
+        background-color: #4ac7ef;
+        border-radius: 10px;
+        padding-left: 7px;
+        padding-right: 7px;
+        letter-spacing: 3px;
+    }
+
+    .renovationWrapper {
+        font: 15pt Righteous;
+        color: white;
+    }
+
+    .renovationWrapper i {
+        color: orange;
+        font-size: 38px;
+        padding: 10px;
+    }
+    .examplePic{
+    	justify-content: space-between;
+    	display: flex;
+    	flex-wrap: nowrap;
+    	flex-direction: row;
+    }
+    .examplePic img{
+    	width: 20vw;
+		height: 22vw;
+		border-radius: 5px;
+    }
+
+    .littleIcon {
+        font-size: 20px !important;
+    }
+
+    .span {
+        display: inline-block;
+        margin-left: 3%;
+    }
+
+    .footer {
+        grid-area: footer;
+    }
