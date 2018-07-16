@@ -3,13 +3,18 @@
 
 <head>
     <link href="https://fonts.googleapis.com/css?family=Righteous" rel="stylesheet">
+    <script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="./fontawesome/css/all.css">
     <meta charset="UTF-8">
-    <title>Document</title>
+    <title>GETRA</title>
 </head>
 
 <body>
+	<div id="scrollTop"><i class="fas fa-arrow-circle-up"></i></div>
     <div class="wrapper">
         <div class="header">
             <div class="logo">GETRA</div>
@@ -20,63 +25,228 @@
             <hr/>
         </div>
         <div class="content">
-        	<div class='picWrapper'>
-            <a href="#renovation" class="renovation">
-                <div>
-                    <div class="innerPic">Renovation</div>
+            <div class='picWrapper'>
+                <a href="#renovation" class="renovation">
+                    <div>
+                        <div class="innerPic">Renovation</div>
+                    </div>
+                </a>
+                <a href="#construction" class=" construction">
+                    <div class="construction">
+                        <div class="innerPic">Construction</div>
+                    </div>
+                </a>
+                <a href="#ELECTRICITÉ" class="electricite">
+                    <div class="electricite">
+                        <div class="innerPic">Electricite</div>
+                    </div>
+                </a>
+                <a href="#menuiserie" class="menuiserie">
+                    <div class="menuiserie">
+                        <div class="innerPic">Menuiserie</div>
+                    </div>
+                </a>
+            </div>
+            <div class="renovationWrapper">
+                <h1 id="renovation">RENOVATION</h1>
+                <hr/>
+                <i class="fas fa-toolbox"></i>Notre entreprise met à votre disposition les compétences de divers corps de métiers liés au bâtiment (ouvriers, peintres, géomètres, maçons, électriciens...), pour vous assurer la réalisation de vos travaux de rénovation selon votre budget.
+                <br/>
+                <div class="examplePic">
+                    <img src="images/realisations/RI_03.jpg" alt="">
+                    <img src="images/realisations/C_02.JPG" alt="">
+                    <img src="images/realisations/CON_01.JPG" alt="">
+                    <img src="images/realisations/M_04.jpg" alt=""></div>
+                <i class="fas fa-dollar-sign"></i>Getra vous garantit un interlocuteur unique, qui centralise vos demandes et procède à une supervision globale et un suivi performant de chaque projet de rénovation, travaux, ou chantier...
+                <br/>
+                <i class="fas fa-info"></i>Avec le soutien de nos architectes et chefs de projets, nous proposons également l'étude prévisionnelle de votre projet:
+                <br/>
+                <div class="span"> <i class="littleIcon fas fa-angle-right"></i>Planification de chantier.
+                    <br/>
+                    <i class="littleIcon fas fa-angle-right"></i>Budgétisation des coûts (effectifs et matériaux).</div>
+                <br/> Getra, votre partenaire de confiance, réalise vos projets dans toutes ses étapes, et vous accompagne dans la mise en œuvre de votre rénovation. Ainsi vous avez la certitude que les délais sont respectés pour une optimisation totale de votre budget.
+                <div class="examplePic">
+                    <img src="images/realisations/J_04.jpg" alt="">
+                    <img src="images/realisations/M_09.jpg" alt="">
+                    <img src="images/realisations/RE_03.jpg" alt="">
+                    <img src="images/realisations/VP_02.JPG" alt="">
                 </div>
-            </a>
-            <a href="#" class="construction">
-                <div class="construction">
-                    <div class="innerPic">Construction</div>
+                <h2>NOS COMPÉTENCES:</h2>
+                <i class="littleIcon fas fa-angle-right"></i>Gros œuvre, construction, parachèvement, démolition
+                <br/>
+                <i class="littleIcon fas fa-angle-right"></i>Terrassement, étanchéité
+                <br/>
+                <i class="littleIcon fas fa-angle-right"></i>Voiries et pavages
+                <br/>
+                <i class="littleIcon fas fa-angle-right"></i>Chapes
+                <br/>
+                <i class="littleIcon fas fa-angle-right"></i>Aménagement intérieur et extérieur
+                <br/>
+                <i class="littleIcon fas fa-angle-right"></i>Rénovation de façades
+                <br/>
+                <i class="littleIcon fas fa-angle-right"></i>Travaux de peinture et de plâtrage
+                <br/>
+                <i class="littleIcon fas fa-angle-right"></i>Pose de carrelages
+                <br/>
+                <i class="littleIcon fas fa-angle-right"></i>Travaux d'extension, vérandas...
+                <br/>
+                <i class="littleIcon fas fa-angle-right"></i>Home staging : conseils en décoration, supervision d'un architecte d'intérieur, design et ameublement...
+                <br/>
+            </div>
+            <div class="electriciteWrapper">
+                <div class="electriciteCenter">
+                    <h1 id='ELECTRICITÉ'>ELECTRICITÉ</h1>
+                    <hr/>
+                    <i class="fas fa-bolt"></i>Le pôle électricité est spécialisé dans tous les travaux d'électricité générale. Grâce à notre équipe de professionnels qualifiés, optez pour la sécurité et la compétence, quels que soient les travaux à accomplir.
                 </div>
-            </a>
-            <a href="#" class="electricite">
-                <div class="electricite">
-                    <div class="innerPic">Electricite</div>
+                <div class="electriciteLeft">
+                    <h2>ELECTRICITÉ GÉNÉRALE:</h2>
+                    <i class="littleIcon fas fa-angle-right"></i>Pose d'un réseau électrique
+                    <br>
+                    <i class="littleIcon fas fa-angle-right"></i>Aménagements de bureaux et habitations
+                    <br>
+                    <i class="littleIcon fas fa-angle-right"></i>Chauffage électrique
+                    <br>
+                    <i class="littleIcon fas fa-angle-right"></i>Eclairage intérieur
+                    <br>
+                    <i class="littleIcon fas fa-angle-right"></i>Mise en place d'éclairage artistique
+                    <br>
+                    <i class="littleIcon fas fa-angle-right"></i>Mise en conformité
+                    <br>
+                    <i class="littleIcon fas fa-angle-right"></i>Dépannage
+                    <br>
+                    <i class="littleIcon fas fa-angle-right"></i>Installations et rénovations électriques
+                    <br>
+                    <h2>CÂBLAGE RÉSEAUX:</h2>
+                    <i class="littleIcon fas fa-angle-right"></i> Pose d'un réseau informatique
+                    <br>
+                    <i class="littleIcon fas fas fa-phone-volume"></i>Téléphonique
+                    <br>
+                    <i class="littleIcon fas fa-angle-right"></i>Fibre optique
+                    <br>
+                    <h2>DOMOTIQUE:</h2>
+                    <i class="littleIcon fas fa-angle-right"></i>Interphone
+                    <br>
+                    <i class="littleIcon fas fas fa-video"></i>Vidéosurveillance
+                    <h2>SÉCURITÉ:</h2>
+                    <i class="littleIcon fas fa-angle-right"></i>Sorties de secours
+                    <br>
+                    <i class="littleIcon fas fa-angle-right"></i>Pose et maintenance d'alarmes
+                    <br>
+                    <i class="littleIcon fas fa-angle-right"></i>Systèmes d'alarmes avec et sans fil
+                    <br>
+                    <i class="littleIcon fas fa-angle-right"></i>Détecteurs d'incendie
+                    <br>
+                    <i class="littleIcon fas fa-angle-right"></i>Alarmes d'intrusion
+                    <br>
+                    <i class="littleIcon fas fa-angle-right"></i>Télécommandes de gestion
+                    <br>
+                    <i class="littleIcon fas fa-angle-right"></i>Badges d'accès
+                    <br>
                 </div>
-            </a>
-            <a href="#" class="menuiserie">
-                <div class="menuiserie">
-                    <div class="innerPic">Menuiserie</div>
+                <div class="electriciteRight">
+                    <img src="images/electricity5.jpg" alt="">
+                    <img src="images/electricity2.jpg" alt="">
+                    <img src="images/electricity6.jpg" alt="">
+                    <img src="images/electricity4.jpg" alt="">
+                    <img src="images/electricity1.jpg" alt="">
+                    <img src="images/electricity3.jpg" alt="">
                 </div>
-            </a>
+            </div>
+            <div class="constructionWrapper">
+                <h1 id="construction">CONSTRUCTION</h1>
+                <hr/>
+                <i class="far fa-building"></i>Getra Construction est dévoué à tous vos projets personnels ou venant d’un architecte. Nous faisons des nouvelles constructions, gros-œuvre, création d’un agrandissement/extension de maison.
+                <br>
+                <i class="fas fa-pen-alt"></i>Nous vous conseillons dans la conception technique et pratique en mettant en œuvre vos idées personnalisées, en vous assurant un intermédiaire unique. Ainsi, tous nos corps de métiers sont à votre disposition pour n'avoir qu'une seule facture.
+                <br> Notre expérience et notre expertise vous garantissent la construction de vos rêves, en toute sérénité !
+                <br>
+                <div class="consructionPic">
+                    <div class="consructionPicLeft">
+                        <i class="fas fa-list-ol"></i> Maçonnerie générale
+                        <br>
+                        <i class="littleIcon fas fa-angle-right"></i>Coulage de dalle en béton
+                        <br>
+                        <i class="littleIcon fas fa-angle-right"></i>Ferraillage
+                        <br>
+                        <i class="littleIcon fas fa-angle-right"></i>Mur de soutènement
+                        <br>
+                        <i class="littleIcon fas fa-angle-right"></i>Mur préfabriqué
+                        <br>
+                        <i class="littleIcon fas fa-angle-right"></i>Coffrage tout type
+                        <br>
+                        <i class="littleIcon fas fa-angle-right"></i>Rénovation intérieure et extérieure
+                        <br>
+                        <i class="littleIcon fas fa-angle-right"></i>Construction de piscine
+                        <br>
+                        <i class="littleIcon fas fa-angle-right"></i>Enduits intérieurs et extérieurs
+                        <br>
+                        <i class="littleIcon fas fa-angle-right"></i>Crépissage, enduisage & mortier
+                        <br>
+                        <i class="littleIcon fas fa-angle-right"></i>Dallages & pavage
+                        <br>
+                        <i class="littleIcon fas fa-angle-right"></i>Ravalement en pierre de façade
+                        <br>
+                        <i class="littleIcon fas fa-angle-right"></i>Murets et pierre, en brique
+                        <br>
+                        <i class="littleIcon fas fa-angle-right"></i>Terrasses extérieures
+                        <br>
+                    </div>
+                    <div class="consructionPicRight">
+                        <img src="images/construction1.jpg" alt="">
+                        <img src="images/construction2.jpg" alt="">
+                        <img src="images/construction3.jpg" alt="">
+                        <img src="images/construction4.jpg" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="menuiserieWrapper">
+                <h1 id="menuiserie">MENUISERIE</h1>
+                <hr/>
+                <i class="fas fa-gavel"></i>Le pôle menuiserie spécialisé dans la rénovation et l’aménagement de l’habitat, conçoit et accomplit vos travaux de menuiserie intérieure et extérieure. De la conception à la pose, nous réalisons tous les types de projets en menuiserie
+                <h2><i class="fas fa-check-double"></i>PLANIFICATION/CONCEPTION:</h2>
+                <i class="littleIcon fas fa-angle-right"></i>Plan d’étude technique
+                <i class="littleIcon fas fa-angle-right"></i>Conseil pour la planification et conception jusqu’à la pose finale
+                <i class="littleIcon fas fa-angle-right"></i>Plan 2D ou 3D
+                <h2><i class="fas fa-exclamation"></i>AMENAGEMENT/MEUBLE:</h2>
+                <i class="littleIcon fas fa-angle-right"></i>Cuisine
+                <i class="littleIcon fas fa-bath"></i>Salle de bain
+                <i class="littleIcon fas fas fa-book"></i>Bibliothèque
+                <i class="littleIcon fas fa-angle-right"></i>Etagère
+                <i class="littleIcon fas fa-angle-right"></i>Placard
+                <i class="littleIcon fas fa-angle-right"></i>Commode
+                <i class="littleIcon fas fa-angle-right"></i>Dressing
+                <i class="littleIcon fas fa-angle-right"></i>Restauration meuble antique
+                <h2><i class="far fa-check-circle"></i>OUVERTURE/FERMETURE:</h2>
+                <i class="littleIcon fas fa-angle-right"></i>Porte d’entrée
+                <i class="littleIcon fas fa-angle-right"></i>Porte intérieure
+                <i class="littleIcon fas fa-angle-right"></i>Châssis fenêtre
+                <i class="littleIcon fas fa-angle-right"></i>Persienne
+                <i class="littleIcon fas fa-angle-right"></i>Matériaux : Acier, aluminium, bois, composite, PVC, verre
+                <h2><i class="fab fa-envira"></i>AMENAGEMENT EXTERIEUR ET OUTDOORLIVING:</h2>
+                <i class="littleIcon fas fa-angle-right"></i>Bardage
+                <i class="littleIcon fas fa-angle-right"></i>Terrasse
+                <i class="littleIcon fas fa-angle-right"></i>Cheminement
+                <i class="littleIcon fas fa-angle-right"></i>Aire de jeux
+                <i class="littleIcon fas fa-angle-right"></i>Cabane dans les arbres
+                <i class="littleIcon fas fa-angle-right"></i>Meuble extérieur
+                <i class="littleIcon fas fa-angle-right"></i>Abri de jardin
+                <i class="littleIcon fas fa-angle-right"></i>Banc
+                <h2><i class="fas fa-cog"></i>ESCALIER:</h2>
+                <i class="littleIcon fas fa-angle-right"></i>Restauration escalier
+                <i class="littleIcon fas fa-angle-right"></i>Restauration revêtement escalier
+                <i class="littleIcon fas fa-angle-right"></i>Structures : 1/4 tournant, 2/4 tournant, avec palier, circulaire, droit, en colimaçon
+                <h2><i class="fas fa-paint-roller"></i>MUR EN BOIS:</h2>
+                <i class="littleIcon fas fa-angle-right"></i>Lambris
+                <i class="littleIcon fas fa-angle-right"></i> Bois décoratif
+            </div>
+            <div class="footer">
+            	<hr/>
+            Copyright 2018 Getra</div>
         </div>
-        <div class="renovationWrapper">
-        	<h1 id="renovation">RENOVATION</h1>
-        	<i class="fas fa-toolbox"></i>Notre entreprise met à votre disposition les compétences de divers corps de métiers liés au bâtiment (ouvriers, peintres, géomètres, maçons, électriciens...), pour vous assurer la réalisation de vos travaux de rénovation selon votre budget.<br/>
-        	<div class="examplePic">
-        	<img src="images/realisations/RI_03.jpg" alt="">
-        	<img src="images/realisations/C_02.JPG" alt="">
-        	<img src="images/realisations/CON_01.JPG" alt="">
-        	<img src="images/realisations/M_04.jpg" alt=""></div>
-        	<i class="fas fa-dollar-sign"></i>Getra vous garantit un interlocuteur unique, qui centralise vos demandes et procède à une supervision globale et un suivi performant de chaque projet de rénovation, travaux, ou chantier...<br/>
-        	<i class="fas fa-info"></i>Avec le soutien de nos architectes et chefs de projets, nous proposons également l'étude prévisionnelle de votre projet:<br/>
-        	<div class="span"> <i class="littleIcon fas fa-angle-right"></i>Planification de chantier.<br/>
-			<i class="littleIcon fas fa-angle-right"></i>Budgétisation des coûts (effectifs et matériaux).</div><br/>
-			Getra, votre partenaire de confiance, réalise vos projets dans toutes ses étapes, et vous accompagne dans la mise en œuvre de votre rénovation.
-			Ainsi vous avez la certitude que les délais sont respectés pour une optimisation totale de votre budget.
-			<div class="examplePic">
-				<img src="images/realisations/J_04.jpg" alt="">
-				<img src="images/realisations/M_09.jpg" alt="">
-				<img src="images/realisations/RE_03.jpg" alt="">
-				<img src="images/realisations/VP_02.JPG" alt="">
-			</div>
-			<h2>NOS COMPÉTENCES:</h2>
-			  <i class="littleIcon fas fa-angle-right"></i>Gros œuvre, construction, parachèvement, démolition<br/>
-			  <i class="littleIcon fas fa-angle-right"></i>Terrassement, étanchéité<br/>
-			  <i class="littleIcon fas fa-angle-right"></i>Voiries et pavages<br/>
-			  <i class="littleIcon fas fa-angle-right"></i>Chapes<br/>
-			  <i class="littleIcon fas fa-angle-right"></i>Aménagement intérieur et extérieur<br/>
-			  <i class="littleIcon fas fa-angle-right"></i>Rénovation de façades<br/>
-			  <i class="littleIcon fas fa-angle-right"></i>Travaux de peinture et de plâtrage<br/>
-			  <i class="littleIcon fas fa-angle-right"></i>Pose de carrelages<br/>
-			  <i class="littleIcon fas fa-angle-right"></i>Travaux d'extension, vérandas...<br/>
-			  <i class="littleIcon fas fa-angle-right"></i>Home staging : conseils en décoration, supervision d'un architecte d'intérieur, design et ameublement...<br/>
-        </div>
-      </div>
-        <div class="footer">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam atque ut nisi quaerat aliquid distinctio vitae id quam sequi excepturi optio, enim ex nulla minima sunt doloremque eius voluptates praesentium!</div>
-    </div>
+        
 </body>
+<script src="js/goUp.js"></script>
+<script src="js/scroll.js"></script>
 
 </html>
