@@ -5,7 +5,7 @@ const API_URL = "https://api.imgur.com/3/gallery/";
 export const  getApi = ({section,sort})=> dispatch =>{
 
   const url = `${API_URL}${section}/${sort}?showViral=true`
-
+  console.log(url)
   axios.get(url, {
     headers: {
       authorization: "Client-ID 8065ef18f4bf419"

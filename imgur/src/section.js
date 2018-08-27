@@ -1,7 +1,6 @@
 import React from "react";
 
 export const Section = props => {
-  // const {onFilterChange}= props;
   return (<div>
     <select name="Section"
             id="Section"

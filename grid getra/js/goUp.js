@@ -1,6 +1,6 @@
 var scrollElem = document.getElementById('scrollTop');
-scrollElem.addEventListener('click', goUp)
-window.onscroll = function() {
+
+window.onscroll = () => {
     if (document.documentElement.scrollTop > document.documentElement.clientHeight) {
         scrollElem.style.opacity = '1';
     } else {
@@ -9,7 +9,7 @@ window.onscroll = function() {
 
 };
 var timeOut;
-function goUp() {
+let goUp = () => {
     let top = Math.max(document.documentElement.scrollTop);
     if (top > 0) {
         window.scrollBy(0, -100);
@@ -19,3 +19,4 @@ function goUp() {
     }
 
 }
+scrollElem.addEventListener('click', goUp)
