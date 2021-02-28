@@ -1,6 +1,6 @@
 // 1st case
-var attitude = function(original, replacement, source) {
-    return function(source) {
+var attitude = function (original, replacement, source) {
+    return function (source) {
         return source.replace(original, replacement);
     };
 };
@@ -14,24 +14,26 @@ console.log(hippify("The Baby Boomers just look the other way."));
 // The Aging Hippies just look the other way.
 // -----------------------------------------------------------------------------
 // 2 case
- var animals = [
-    { name: 'тузик', species: 'dog' },
-     { name: 'рубик', species: 'fish'}, 
-     { name: 'мурлей', species: 'cat'}, 
-     { name: 'рекс', species: 'dog'}, 
-     { name: 'jimmy', species: 'fish'}
-     ] 
+var animals = [
+    {name: 'тузик', species: 'dog'},
+    {name: 'рубик', species: 'fish'},
+    {name: 'мурлей', species: 'cat'},
+    {name: 'рекс', species: 'dog'},
+    {name: 'jimmy', species: 'fish'}
+]
 
-     var isDog = function (obj){return obj.species === 'dog'}
-     var dogs = animals.filter (isDog);
-     console.log(dogs);
+var isDog = function (obj) {
+    return obj.species === 'dog'
+}
+var dogs = animals.filter(isDog);
+console.log(dogs);
 
-     
-    // по старому
-    // var dogs = [];
-    // for (var i = 0; i < animals.length; i++) {
-    // 	if (animals[i].species === 'dog' ) {
-    // 		dogs.push(animals[i]);
-    // 	}
-    // }
+
+// по старому
+// var dogs = [];
+// for (var i = 0; i < animals.length; i++) {
+// 	if (animals[i].species === 'dog' ) {
+// 		dogs.push(animals[i]);
+// 	}
+// }
 // -------------------------------------------------------------------------------------------------

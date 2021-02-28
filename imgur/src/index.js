@@ -4,13 +4,13 @@ import './index.css';
 import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 import {Provider} from 'react-redux';
-import {createStore,applyMiddleware} from 'redux';
+import {applyMiddleware, createStore} from 'redux';
 import {fetch} from './reducer';
 import {composeWithDevTools} from 'redux-devtools-extension';
 import thunk from 'redux-thunk';
 
 
-const store = createStore(fetch,composeWithDevTools(applyMiddleware(thunk)));
+const store = createStore(fetch, composeWithDevTools(applyMiddleware(thunk)));
 
 // const getApi = ()=>{
 //   axios.get('https://api.imgur.com/3/gallery/top/top', {
@@ -30,11 +30,10 @@ const store = createStore(fetch,composeWithDevTools(applyMiddleware(thunk)));
 // })
 
 
-
 ReactDOM.render(
-  <Provider store={store}>
-    <App />
-  </Provider>,
-  document.getElementById('root'));
+    <Provider store={store}>
+        <App/>
+    </Provider>,
+    document.getElementById('root'));
 
 registerServiceWorker();
