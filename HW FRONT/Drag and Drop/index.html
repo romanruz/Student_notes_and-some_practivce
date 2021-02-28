@@ -36,8 +36,7 @@
 let bodyStr = localStorage.getItem('body');
 if (bodyStr !== null) {
     let bodyStr = localStorage.getItem('body');
-    let body = JSON.parse(bodyStr);
-    document.body.innerHTML = body;
+    document.body.innerHTML = JSON.parse(bodyStr);
 }
 //
 
