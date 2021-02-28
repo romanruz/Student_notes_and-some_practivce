@@ -16,7 +16,8 @@
             <div class="target" draggable="true"> &uarr; Создать новый блок</div>
             <div class="target" draggable="true">&#8595; Добавить новое поле</div>
             <div style="display: none" id="addblock">
-                <input type="text" placeholder="Введите текст" id="input">
+                <label for="input">Dde</label>
+                <input type="text" name="inputt" placeholder="Введите текст" id="input">
                 <br/>
                 <button id="makeBut">Добавить</button>
             </div>
@@ -142,7 +143,7 @@ function createNewChild() {
     input.value = '';
     list.insertBefore(item, list.firstChild);
     addListener();
-    return
+
 }
 
 function addListener() {
